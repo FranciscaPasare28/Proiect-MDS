@@ -8,7 +8,7 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class Reception extends JFrame implements ActionListener{
-    JButton newCustomer , rooms, department;
+    JButton newCustomer , rooms, department, searchRoom, allEmployee, managerInfo, customers;
     Reception() {
         getContentPane().setBackground(Color.LIGHT_GRAY);
         setLayout(null);
@@ -35,22 +35,25 @@ public class Reception extends JFrame implements ActionListener{
         department.addActionListener(this);
         add(department);
 
-        JButton allEmployee = new JButton("All Employees");
+        allEmployee = new JButton("All Employees");
         allEmployee.setBounds(10, 150,200, 30);
         allEmployee.setBackground(Color.BLACK);
         allEmployee.setForeground(Color.WHITE);
+        allEmployee.addActionListener(this);
         add(allEmployee);
 
-        JButton customers = new JButton("Customer Info");
+        customers = new JButton("Customer Info");
         customers.setBounds(10, 190,200, 30);
         customers.setBackground(Color.BLACK);
         customers.setForeground(Color.WHITE);
+        customers.addActionListener(this);
         add(customers);
 
-        JButton managerInfo = new JButton("Manager Info");
+        managerInfo = new JButton("Manager Info");
         managerInfo.setBounds(10, 230,200, 30);
         managerInfo.setBackground(Color.BLACK);
         managerInfo.setForeground(Color.WHITE);
+        managerInfo.addActionListener(this);
         add(managerInfo);
 
         JButton checkout = new JButton("Checkout");
@@ -77,10 +80,11 @@ public class Reception extends JFrame implements ActionListener{
         pickup.setForeground(Color.WHITE);
         add(pickup);
 
-        JButton searchRoom = new JButton("Search Room");
+        searchRoom = new JButton("Search Room");
         searchRoom.setBounds(10, 430,200, 30);
         searchRoom.setBackground(Color.BLACK);
         searchRoom.setForeground(Color.WHITE);
+        searchRoom.addActionListener(this);
         add(searchRoom);
 
         JButton logout = new JButton("Logout");
@@ -112,6 +116,23 @@ public class Reception extends JFrame implements ActionListener{
         }else if(ae.getSource() == department){
             setVisible(false);
             new Department();
+
+        } else if (ae.getSource() == allEmployee) {
+            setVisible(false);
+            new EmployeeInfo();
+
+        } else if (ae.getSource() == managerInfo) {
+            setVisible(false);
+            new ManagerInfo();
+
+        } else if(ae.getSource() == searchRoom){
+            setVisible(false);
+            new SearchRoom();
+
+        } else if (ae.getSource() == customers) {
+            setVisible(false);
+            new CustomerInfo();
+
         }
     }
 
