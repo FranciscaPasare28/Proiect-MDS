@@ -8,7 +8,7 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class Reception extends JFrame implements ActionListener{
-    JButton newCustomer , rooms, department, searchRoom, allEmployee, managerInfo, customers;
+    JButton newCustomer , rooms, department, searchRoom, allEmployee, managerInfo, customers, roomStatus, update;
     Reception() {
         getContentPane().setBackground(Color.LIGHT_GRAY);
         setLayout(null);
@@ -62,16 +62,18 @@ public class Reception extends JFrame implements ActionListener{
         checkout.setForeground(Color.WHITE);
         add(checkout);
 
-        JButton update = new JButton("Update Status");
+        update = new JButton("Update Status");
         update.setBounds(10, 310,200, 30);
         update.setBackground(Color.BLACK);
         update.setForeground(Color.WHITE);
+        update.addActionListener(this);
         add(update);
 
-        JButton roomStatus = new JButton("Update Room Status");
+        roomStatus = new JButton("Update Room Status");
         roomStatus.setBounds(10, 350,200, 30);
         roomStatus.setBackground(Color.BLACK);
         roomStatus.setForeground(Color.WHITE);
+        roomStatus.addActionListener(this);
         add(roomStatus);
 
         JButton pickup = new JButton("Pickup Service");
@@ -107,7 +109,7 @@ public class Reception extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == newCustomer){
             setVisible(false);
-//            new AddCustomer();
+            new AddCustomer();
 
         }else if(ae.getSource() == rooms){
             setVisible(false);
@@ -132,6 +134,14 @@ public class Reception extends JFrame implements ActionListener{
         } else if (ae.getSource() == customers) {
             setVisible(false);
             new CustomerInfo();
+
+        } else if (ae.getSource() == update) {
+            setVisible(false);
+            new UpdateCheck();
+
+        } else if (ae.getSource() == roomStatus) {
+            setVisible(false);
+            new UpdateRoom();
 
         }
     }

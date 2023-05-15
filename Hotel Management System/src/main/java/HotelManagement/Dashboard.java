@@ -50,16 +50,22 @@ public class Dashboard extends JFrame implements ActionListener {
         admin.add(addRooms);
 
         JMenuItem addDriver = new JMenuItem("ADD DRIVERS");
+        addDriver.addActionListener(this);
         admin.add(addDriver);
 
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent ae){
+        //daca aceasta e actiunea cream o noua instanta a clasei
         if(ae.getActionCommand().equals("ADD EMPLOYEE")){
             new AddEmployee();
         } else if (ae.getActionCommand().equals("ADD ROOMS")) {
             new AddRooms();
+        }else if(ae.getActionCommand().equals("ADD DRIVERS")){
+            new AddDriver();
+        } else if (ae.getActionCommand().equals("RECEPTION")) {
+            new Reception();
         }
     }
 
