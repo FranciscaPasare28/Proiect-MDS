@@ -110,7 +110,7 @@ public class AddDriver extends JFrame implements ActionListener {
         add(l15);
 
 
-        setBounds(300, 200, 980, 470);
+        setBounds(300, 150, 980, 500);
         setVisible(true);
 
     }
@@ -134,11 +134,14 @@ public class AddDriver extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "New Driver Added Successfully");
 
                 setVisible(false);
+                new Admin();
+
             }catch (Exception e) {
                 e.printStackTrace();
             }
         }else {
             setVisible(false);
+            new Admin();
         }
     }
     public static void main(String[] args) {

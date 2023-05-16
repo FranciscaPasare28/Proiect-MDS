@@ -73,10 +73,11 @@ Login extends JFrame implements ActionListener {
                 if(rs.next())
                 {
                     setVisible(false);
-                    new Dashboard();
+                    new Admin();
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid username or password");
                     setVisible(false);
+                    new Login();
                 }
 
             }catch (Exception e)

@@ -90,7 +90,7 @@ public class Room extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae){
         setVisible(false);
-        new Reception();
+        new Admin();
     }
 
     public static void main(String[] args) {

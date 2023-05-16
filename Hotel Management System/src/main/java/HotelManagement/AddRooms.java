@@ -116,11 +116,14 @@ public class AddRooms extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "New Room Added Successfully");
 
                 setVisible(false);
+                new Admin();
+
             }catch (Exception e) {
                 e.printStackTrace();
             }
         }else {
             setVisible(false);
+            new Admin();
         }
     }
     public static void main(String[] args) {

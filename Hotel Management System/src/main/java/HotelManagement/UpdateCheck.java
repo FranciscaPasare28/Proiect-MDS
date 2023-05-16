@@ -146,10 +146,12 @@ public class UpdateCheck extends JFrame implements ActionListener {
 
             try{
                 Conn c = new Conn();
-                c.s.executeUpdate("update customer set room = '" + room + "', name = '" + name + "', checkinTime = '" + checkin + "', deposit = '" + deposit + "' where number = '" + number + "'");
+                c.s.executeUpdate("update customer set room = '" + room + "', name = '" + name + "', checkintime = '" + checkin + "', deposit = '" + deposit + "' where \"number\" = '" + number + "'");
 //                System.out.println(("update customer set room = '" + room + "', name = '" + name + "', checkinTime = '" + checkin + "', deposit = '" + deposit + "'"));
                 JOptionPane.showMessageDialog(null, "Data updated successfully!");
                 setVisible(false);
+                new Admin();
+
             }catch (Exception e)
             {
                 e.printStackTrace();
@@ -157,7 +159,7 @@ public class UpdateCheck extends JFrame implements ActionListener {
         }
         else{
             setVisible(false);
-            new Reception();
+            new Admin();
         }
     }
     public static void main(String[] args) {

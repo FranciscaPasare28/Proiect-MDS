@@ -85,8 +85,10 @@ public class UpdateRoom extends JFrame implements ActionListener {
         back.addActionListener(this);
         add(back);
 
-        ImageIcon i1 = new ImageIcon("src/main/java/images/room.jpg");
-        JLabel image = new JLabel(i1);
+        ImageIcon i1 = new ImageIcon("src/main/java/images/room_status.jpg");
+        Image i3 = i1.getImage().getScaledInstance(450, 500,Image.SCALE_DEFAULT);
+        ImageIcon i2 = new ImageIcon(i3);
+        JLabel image = new JLabel (i2);
         image.setBounds(400, 50, 500, 300);
         add(image);
 
@@ -136,7 +138,7 @@ public class UpdateRoom extends JFrame implements ActionListener {
         }
         else{
             setVisible(false);
-            new Reception();
+            new Admin();
         }
     }
     public static void main(String[] args) {

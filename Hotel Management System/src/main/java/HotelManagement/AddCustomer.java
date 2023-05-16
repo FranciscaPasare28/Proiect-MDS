@@ -28,13 +28,11 @@ public class AddCustomer extends JFrame implements ActionListener {
         lblid.setFont(new Font("Raieway",Font.PLAIN, 20));
         add(lblid);
 
-        String option[]={"Aadhaar Card", "Passport", "Driving License","Voted-id Card", "Ration Card"};
+        String option[]={"Passport", "Driving License","Voted-id Card", "Ration Card"};
         comboid= new JComboBox(option);
         comboid.setBounds(200,80,150,25);
         comboid.setBackground(Color.WHITE);
         add(comboid);
-
-
 
         JLabel lblnumber = new JLabel("Number");
         lblnumber.setBounds(35, 120, 100, 20);
