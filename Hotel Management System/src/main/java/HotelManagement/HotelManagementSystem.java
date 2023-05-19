@@ -38,12 +38,11 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
     public static void main(String[] args) {
         new HotelManagementSystem();
 
-
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         setVisible(false);
-        new Login();
+        new Dashboard();
     }
 }

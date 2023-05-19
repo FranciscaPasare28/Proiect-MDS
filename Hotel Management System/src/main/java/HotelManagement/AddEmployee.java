@@ -11,7 +11,7 @@ import javax.swing.*;
 
 public class AddEmployee extends JFrame{ //Third Frame
 
-
+    JButton Next, cancel;
     JTextField textField,textField_1,textField_2,textField_3,textField_4,textField_5,textField_6;
     JComboBox c1;
 
@@ -32,12 +32,6 @@ public class AddEmployee extends JFrame{ //Third Frame
         textField = new JTextField();
         textField.setBounds(200, 30, 150, 27);
         add(textField);
-
-        JButton Next = new JButton("SAVE");
-        Next.setBounds(200, 420, 150, 30);
-        Next.setBackground(Color.BLACK);
-        Next.setForeground(Color.WHITE);
-        add(Next);
 
         JLabel Pnrno = new JLabel("AGE");
         Pnrno.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -118,6 +112,25 @@ public class AddEmployee extends JFrame{ //Third Frame
         image.setBounds(410,80,480,410);
         add(image);
 
+        Next = new JButton("SAVE");
+        Next.setBounds(200, 420, 150, 30);
+        Next.setBackground(Color.BLACK);
+        Next.setForeground(Color.WHITE);
+        add(Next);
+
+        cancel = new JButton("Cancel");
+        cancel.setForeground(Color.WHITE);
+        cancel.setBackground(Color.black);
+        cancel.setBounds(60, 420, 130, 30);
+        add(cancel);
+
+
+        cancel.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                setVisible(false);
+                new Admin();
+            }
+        });
 
         Next.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
@@ -146,6 +159,7 @@ public class AddEmployee extends JFrame{ //Third Frame
                     c.s.executeUpdate(str);
                     JOptionPane.showMessageDialog(null,"Employee Added");
                     setVisible(false);
+                    new Admin();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -153,9 +167,10 @@ public class AddEmployee extends JFrame{ //Third Frame
             }
         });
 
-        setSize(900,600);
+//        setSize(900,600);
+        setBounds(300, 100, 900, 600);
         setVisible(true);
-        setLocation(530,200);
+//        setLocation(530,200);
 
     }
 

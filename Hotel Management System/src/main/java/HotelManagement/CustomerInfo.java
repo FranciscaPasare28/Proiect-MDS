@@ -40,13 +40,13 @@ public class CustomerInfo extends JFrame implements ActionListener {
             ResultSet rs = c.s.executeQuery(sql);
 
             while (rs.next()) {
-                String documentType = rs.getString("DOCUMENT_TYPE");
-                String number = rs.getString("NUMBER");
+                String documentType = rs.getString("DOCUMENT");
+                String number = rs.getString("number");
                 String name = rs.getString("NAME");
                 String gender = rs.getString("GENDER");
                 String country = rs.getString("COUNTRY");
-                String room_number = rs.getString("ROOM_NUMBER");
-                String checkIn = rs.getString("CHECKIN_TIME");
+                String room_number = rs.getString("ROOM");
+                String checkIn = rs.getString("CHECKINTIME");
                 String deposit = rs.getString("DEPOSIT");
                 model.addRow(new Object[]{documentType, number, name, gender, country, room_number, checkIn, deposit});
             }
@@ -73,7 +73,7 @@ public class CustomerInfo extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae){
         setVisible(false);
-        new Reception();
+        new Admin();
     }
 
     public static void main(String[] args) {

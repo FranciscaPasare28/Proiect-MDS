@@ -18,7 +18,7 @@ public class ManagerInfo extends JFrame implements ActionListener {
         setLayout(null);
 
 
-        String[] columnNames = {"Name", "Age", "Gender", "Job", "Salary", "Phone","Email"};
+        String[] columnNames = {"Name", "Age", "Gender", "Job", "Phone","Email"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
 
@@ -44,10 +44,9 @@ public class ManagerInfo extends JFrame implements ActionListener {
                 String age = rs.getString("AGE");
                 String gender = rs.getString("GENDER");
                 String job = rs.getString("JOB");
-                String salary = rs.getString("SALARY");
                 String phone = rs.getString("PHONE");
                 String email = rs.getString("EMAIL");
-                model.addRow(new Object[]{name, age, gender, job, salary, phone, email});
+                model.addRow(new Object[]{name, age, gender, job, phone, email});
             }
 
             rs.close();
