@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="oracle.database.jdbc.debug.ojdbc11_g" type="repository">
+    <properties maven-id="com.oracle.database.jdbc.debug:ojdbc11_g:21.5.0.0" />
+    <ANNOTATIONS>
+      <root url="file://$PROJECT_DIR$/../../../javamail-master/javamail-master/mail" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/oracle/database/jdbc/debug/ojdbc11_g/21.5.0.0/ojdbc11_g-21.5.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
