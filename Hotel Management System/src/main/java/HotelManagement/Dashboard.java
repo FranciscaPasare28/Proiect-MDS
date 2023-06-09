@@ -29,21 +29,29 @@ public class Dashboard extends JFrame implements ActionListener {
         mb.setBounds(0, 0, 1550, 30);
         image.add(mb);
 
-        JMenu hotel = new JMenu("CUSTOMER");
-        hotel.setForeground(Color.RED);
-        mb.add(hotel);
+        JButton next = new JButton("Login");
+        next.setBounds(850, 550, 150, 50);
+        next.setBackground(Color.WHITE);
+        next.setForeground(Color.BLACK);
+        next.addActionListener(this);
+        next.setFont(new Font("serif", Font.PLAIN, 24));
+        image.add(next);
 
-        JMenuItem reception = new JMenuItem("RECEPTION");
-        reception.addActionListener(this);
-        hotel.add(reception);
-
-        JMenu admin = new JMenu("EMPLOYEE");
-        admin.setForeground(Color.BLUE);
-        mb.add(admin);
-
-        JMenuItem addEmployee = new JMenuItem("ADMIN");
-        addEmployee.addActionListener(this);
-        admin.add(addEmployee);
+//        JMenu hotel = new JMenu("CUSTOMER");
+//        hotel.setForeground(Color.RED);
+//        mb.add(hotel);
+//
+//        JMenuItem reception = new JMenuItem("RECEPTION");
+//        reception.addActionListener(this);
+//        hotel.add(reception);
+//
+//        JMenu admin = new JMenu("EMPLOYEE");
+//        admin.setForeground(Color.BLUE);
+//        mb.add(admin);
+//
+//        JMenuItem addEmployee = new JMenuItem("ADMIN");
+//        addEmployee.addActionListener(this);
+//        admin.add(addEmployee);
 //
 //        JMenuItem addRooms = new JMenuItem("ADD ROOMS");
 //        addRooms.addActionListener(this);
@@ -57,6 +65,9 @@ public class Dashboard extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae){
+
+        new Login();
+
         //daca aceasta e actiunea cream o noua instanta a clasei
 //        if(ae.getActionCommand().equals("ADD EMPLOYEE")){
 //            new AddEmployee();
@@ -64,12 +75,12 @@ public class Dashboard extends JFrame implements ActionListener {
 //            new AddRooms();
 //        }else if(ae.getActionCommand().equals("ADD DRIVERS")){
 //            new AddDriver();
-        if (ae.getActionCommand().equals("ADMIN")) {
-            new Login();
-
-        } else if (ae.getActionCommand().equals("RECEPTION")) {
-            new Reception();
-        }
+//        if (ae.getActionCommand().equals("ADMIN")) {
+//            new Login();
+//
+//        } else if (ae.getActionCommand().equals("RECEPTION")) {
+//            new Reception();
+//        }
     }
 
     public static void main(String[] args) {

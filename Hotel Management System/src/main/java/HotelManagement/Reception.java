@@ -1,15 +1,16 @@
 package HotelManagement;
 
 
+import HotelManagement.RoomDirectory.SearchRoom;
+
 import javax.swing.*;
 
-import java.sql.*;
 import java.awt.event.*;
 import java.awt.*;
 
 public class Reception extends JFrame implements ActionListener{
     JButton newCustomer , rooms, searchRoom, managerInfo;
-    Reception() {
+    public Reception() {
         getContentPane().setBackground(Color.LIGHT_GRAY);
         setLayout(null);
 
@@ -63,7 +64,7 @@ public class Reception extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == newCustomer){
             setVisible(false);
-            new AddCustomer();
+            new Reservation();
 
         } else if (ae.getSource() == managerInfo) {
             setVisible(false);

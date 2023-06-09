@@ -1,54 +1,38 @@
 package HotelManagement;
 
 
+import HotelManagement.CustomerDirectory.DisplayCustomer;
+import HotelManagement.CustomerDirectory.UpdateCustomer;
+import HotelManagement.EmployeeDirectory.Employee;
+import HotelManagement.RoomDirectory.Room;
+
 import javax.swing.*;
 
-import java.sql.*;
 import java.awt.event.*;
 import java.awt.*;
 
 public class Admin extends JFrame implements ActionListener{
-    JButton newCustomer , rooms, department, searchRoom, allEmployee, managerInfo, customers, roomStatus, update;
-    JButton addEmployee, addRooms, addDriver;
-    Admin() {
+    JButton newCustomer , rooms, department, managerInfo, customers, roomStatus, update;
+    JButton butEmployee, butRooms;
+    public Admin() {
         getContentPane().setBackground(Color.LIGHT_GRAY);
         setLayout(null);
 
-        addEmployee = new JButton("Add Employee");
-        addEmployee.setBounds(10, 30,200, 30);
-        addEmployee.setBackground(Color.BLACK);
-        addEmployee.setForeground(Color.WHITE);
-        addEmployee.addActionListener(this);
-        add(addEmployee);
+        // Butonul pentru gestionarea angajaților
+        butEmployee = new JButton("Employees");
+        butEmployee.setBounds(10, 30,200, 30);
+        butEmployee.setBackground(Color.BLACK);
+        butEmployee.setForeground(Color.WHITE);
+        butEmployee.addActionListener(this);
+        add(butEmployee);
 
-        addRooms = new JButton("Add Rooms");
-        addRooms.setBounds(10, 70,200, 30);
-        addRooms.setBackground(Color.BLACK);
-        addRooms.setForeground(Color.WHITE);
-        addRooms.addActionListener(this);
-        add(addRooms);
-
-        addDriver = new JButton("Add Driver");
-        addDriver.setBounds(10, 110,200, 30);
-        addDriver.setBackground(Color.BLACK);
-        addDriver.setForeground(Color.WHITE);
-        addDriver.addActionListener(this);
-        add(addDriver);
-
-        rooms = new JButton("Rooms");
-        rooms.setBounds(10, 150,200, 30);
-        rooms.setBackground(Color.BLACK);
-        rooms.setForeground(Color.WHITE);
-        rooms.addActionListener(this);
-        add(rooms);
-
-
-        roomStatus = new JButton("Update Room Status");
-        roomStatus.setBounds(10, 190,200, 30);
-        roomStatus.setBackground(Color.BLACK);
-        roomStatus.setForeground(Color.WHITE);
-        roomStatus.addActionListener(this);
-        add(roomStatus);
+        // Butonul pentru gestionarea camerelor
+        butRooms = new JButton("Rooms");
+        butRooms.setBounds(10, 70,200, 30);
+        butRooms.setBackground(Color.BLACK);
+        butRooms.setForeground(Color.WHITE);
+        butRooms.addActionListener(this);
+        add(butRooms);
 
         department = new JButton("Departments");
         department.setBounds(10, 230,200, 30);
@@ -57,12 +41,6 @@ public class Admin extends JFrame implements ActionListener{
         department.addActionListener(this);
         add(department);
 
-        allEmployee = new JButton("All Employees");
-        allEmployee.setBounds(10, 270,200, 30);
-        allEmployee.setBackground(Color.BLACK);
-        allEmployee.setForeground(Color.WHITE);
-        allEmployee.addActionListener(this);
-        add(allEmployee);
 
         customers = new JButton("Customer Info");
         customers.setBounds(10, 310,200, 30);
@@ -103,50 +81,36 @@ public class Admin extends JFrame implements ActionListener{
 
     }
 
+    //In functie de apasarea fiecarui buton suntem trimisi in diferite pagini
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == newCustomer){
             setVisible(false);
-            new AddCustomer();
-
-        }else if(ae.getSource() == rooms){
-            setVisible(false);
-            new Room();
+            new Reservation();
 
         }else if(ae.getSource() == department){
             setVisible(false);
             new Department();
 
-        } else if (ae.getSource() == allEmployee) {
-            setVisible(false);
-            new EmployeeInfo();
-
-        } else if (ae.getSource() == managerInfo) {
+        }  else if (ae.getSource() == managerInfo) {
             setVisible(false);
             new ManagerInfo();
 
         } else if (ae.getSource() == customers) {
             setVisible(false);
-            new CustomerInfo();
+            new DisplayCustomer();
 
         } else if (ae.getSource() == update) {
             setVisible(false);
-            new UpdateCheck();
+            new UpdateCustomer();
 
-        } else if (ae.getSource() == roomStatus) {
+        } else if(ae.getSource() == butEmployee){
             setVisible(false);
-            new UpdateRoom();
+            new Employee();
 
-        } else if(ae.getSource() == addEmployee){
+        } else if (ae.getSource() == butRooms) {
             setVisible(false);
-            new AddEmployee();
+            new Room();
 
-        } else if (ae.getSource() == addRooms) {
-            setVisible(false);
-            new AddRooms();
-
-        }else if(ae.getSource() == addDriver){
-            setVisible(false);
-            new AddDriver();
         }
     }
 
