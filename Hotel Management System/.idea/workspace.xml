@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c8e81b8-ecb2-4f73-a313-734c07ad9a79" name="Changes" comment="" />
+    <list default="true" id="5c8e81b8-ecb2-4f73-a313-734c07ad9a79" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f82ab91-e0f4-430f-a457-dd479952f53c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/Reservation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +21,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,6 +91,7 @@
       <workItem from="1686247589114" duration="473000" />
       <workItem from="1686250423770" duration="8211000" />
       <workItem from="1686302055632" duration="4326000" />
+      <workItem from="1686329378295" duration="8000" />
     </task>
     <servers />
   </component>

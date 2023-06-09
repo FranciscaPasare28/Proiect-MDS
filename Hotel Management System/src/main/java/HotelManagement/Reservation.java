@@ -22,8 +22,9 @@ public class Reservation extends JFrame implements ActionListener {
     Choice croom;
     JLabel checkintime;
     JButton add, back, check;
-
+    static int attempts = 0;
     Reservation(){
+
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
@@ -116,6 +117,11 @@ public class Reservation extends JFrame implements ActionListener {
         rtriple.setBounds(340,240,70,25);
         add(rtriple);
 
+        ButtonGroup buttonGroup = new ButtonGroup();    // Adaugam radio butoanele in acelasi grup
+        buttonGroup.add(rsingle);                       // ca sa se deselecteze automat atunci cand apasam altul.
+        buttonGroup.add(rdouble);
+        buttonGroup.add(rtriple);
+
 
         // Checkin time
         JLabel lbltime = new JLabel("Checkin time");
@@ -154,7 +160,7 @@ public class Reservation extends JFrame implements ActionListener {
         check = new JButton("Check for rooms");
         check.setBackground(Color.black);
         check.setForeground(Color.WHITE);
-        check.setBounds(80, 360, 160, 30);
+        check.setBounds(30, 370, 160, 30);
         check.addActionListener(this);
         add(check);
 
@@ -185,12 +191,35 @@ public class Reservation extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource()==check){
-
             // Numar camere disponibile
-            JLabel lblroom = new JLabel("Room number:");
-            lblroom.setBounds(35, 400, 150, 20);
-            lblroom.setFont(new Font("Raieway",Font.PLAIN, 20));
-            add(lblroom);
+            Reservation.attempts++;     //incrementam numarul de apasari a butonului de verificare
+
+            if(attempts == 1)           // daca apasam pentru prima data butonul de check adaugam eticheta "Room number":
+            {
+                JLabel lblroom = new JLabel("Room number:");
+                lblroom.setBounds(35, 420, 150, 20);
+                lblroom.setFont(new Font("Raieway",Font.PLAIN, 20));
+                add(lblroom);
+
+                JLabel lbltotal = new JLabel("Total:");                    // Eticheta pentru pretul total
+                lbltotal.setBounds(200, 370, 160, 30);
+                lbltotal.setFont(new Font("Raieway",Font.PLAIN, 20));
+                add(lbltotal);
+
+            }
+
+            if(attempts > 1)                                // daca a fost deja generata lista de camere o stergem
+            {                                               // pentru a putea genera una noua adecvata interogarii noi
+
+                Component[] components = getContentPane().getComponents();  // obtinem toate componentele din pagina
+                for(Component comp: components)                             // stergem meniul cu camerele valabile
+                {
+                    if(comp instanceof Choice)                              //componenta = eticheta, button, meniu, etc..
+                    {
+                        remove(comp);
+                    }
+                }
+            }
 
             croom = new Choice();
             String room_type = null;
@@ -231,57 +260,49 @@ public class Reservation extends JFrame implements ActionListener {
                 e.printStackTrace();
             }
 
-            croom.setBounds(200,400,150,25);
+            croom.setBounds(200,420,150,25);
             add(croom);
 
+            String room = croom.getSelectedItem().substring(4,7);
+            date_checkin = datecheckin.getModel().getValue().toString();
+            date_checkout = datecheckout.getModel().getValue().toString();
+            float pret = getReservationPrice(room, date_checkin, date_checkout);
+
+            Component[] components = getContentPane().getComponents();      // updatam pretul in functie de alegerea clientlui
+            for(Component comp : components)
+            {
+                if(comp instanceof JLabel)
+                {
+                    try {
+                        JLabel label = (JLabel) comp;
+                        if (label.getText().startsWith("Total:"))       // cautam eticheta pentru Total
+                        {
+                            ((JLabel) comp).setText("Total: " + pret);           // ii modificam valoarea cu pretul actual
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        continue;
+                    }
+                }
+            }
+
+
+
         }else if(ae.getSource()==add) {
+
             String identity = (String) comboid.getSelectedItem();
             String number = tfnumber.getText();
             String name = tfname.getText();
             String country = tfcountry.getText();
-            String room = croom.getSelectedItem();
+            String room = croom.getSelectedItem().substring(4,7);
             String date_checkin = datecheckin.getModel().getValue().toString();
             String date_checkout = datecheckout.getModel().getValue().toString();
 
-            // calculare plata = pret * nr_nopti
-            float camera_pret = 0;
-            String pret_camera = "select price from room where roomnumber = '"+room+"'";
-            try {
-                Conn conn = new Conn();
-                ResultSet rs = conn.s.executeQuery(pret_camera);
-                while (rs.next()) {
-                   camera_pret = Float.parseFloat(rs.getString("price"));
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            long nr_nopti = 0;
-            SimpleDateFormat inputFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");
-            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
-            LocalDate checkout = null;
-            LocalDate checkin = null;
-            try {
-
-                Date date = inputFormat.parse(date_checkin);
-                String outputDate = outputFormat.format(date);
-                Date date2 = inputFormat.parse(date_checkout);
-                String outputDate2 = outputFormat.format(date2);
-
-                checkin = LocalDate.parse(outputDate);
-                checkout = LocalDate.parse(outputDate2);
-
-                long daysDifference = ChronoUnit.DAYS.between(checkin, checkout);
-                nr_nopti = Math.abs(daysDifference);
-
-            }
-            catch (ParseException excep) {
-                excep.printStackTrace();
-            }
-
-            float pret = camera_pret * nr_nopti;
+            float pret = getReservationPrice(room, date_checkin, date_checkout);
 
             try{
-                String query = "insert into Customer values('"+identity+"','"+number+"','"+name+"','"+country+"','"+room+"','"+checkin+"','"+checkout+"','"+ pret +"','false','false')";
+                String query = "insert into Customer values('"+identity+"','"+number+"','"+name+"','"+country+"','"+room+"','"+date_checkin+"','"+date_checkout+"','"+ pret +"','false','false')";
 //                String query2 = "update room set availability = 'Occupied' where roomnumber = '"+room+"'";
 
                 Conn conn = new Conn();
@@ -327,5 +348,47 @@ public class Reservation extends JFrame implements ActionListener {
 
             return "";
         }
+    }
+
+    public static float getReservationPrice(String room, String date_checkin, String date_checkout)
+    {  // Functie care calculeaza pretul sederii unui client, primeste ca parametrii: nr camerei, data de intrare si data de iesire
+        // calculare plata = pret * nr_nopti
+        float camera_pret = 0;
+        String pret_camera = "select price from room where roomnumber = '"+room+"'";
+        try {
+            Conn conn = new Conn();
+            ResultSet rs = conn.s.executeQuery(pret_camera);
+            while (rs.next()) {
+                camera_pret = Float.parseFloat(rs.getString("price"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        long nr_nopti = 0;
+        SimpleDateFormat inputFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+        LocalDate checkout = null;
+        LocalDate checkin = null;
+        try {
+
+            Date date = inputFormat.parse(date_checkin);
+            String outputDate = outputFormat.format(date);
+            Date date2 = inputFormat.parse(date_checkout);
+            String outputDate2 = outputFormat.format(date2);
+
+            checkin = LocalDate.parse(outputDate);
+            checkout = LocalDate.parse(outputDate2);
+
+            long daysDifference = ChronoUnit.DAYS.between(checkin, checkout);
+            nr_nopti = Math.abs(daysDifference);
+
+        }
+        catch (ParseException excep) {
+            excep.printStackTrace();
+        }
+
+        float pret = camera_pret * nr_nopti;
+
+        return pret;
     }
 }
