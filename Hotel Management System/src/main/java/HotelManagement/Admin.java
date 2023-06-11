@@ -4,7 +4,9 @@ package HotelManagement;
 import HotelManagement.CustomerDirectory.DisplayCustomer;
 import HotelManagement.CustomerDirectory.UpdateCustomer;
 import HotelManagement.EmployeeDirectory.Employee;
+import HotelManagement.FrontDesk.Reservation;
 import HotelManagement.RoomDirectory.Room;
+import HotelManagement.FrontDesk.*;
 
 import javax.swing.*;
 
@@ -114,12 +116,8 @@ public class Admin extends JFrame implements ActionListener{
         }
     }
 
-
-
     public static void main(String[] args) {
         new Admin();
     }
-
-
 
 }
