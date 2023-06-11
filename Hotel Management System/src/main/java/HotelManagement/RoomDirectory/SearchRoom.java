@@ -1,7 +1,7 @@
 package HotelManagement.RoomDirectory;
 
 import HotelManagement.Conn;
-import HotelManagement.Reception;
+import HotelManagement.FrontDesk.Reception;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

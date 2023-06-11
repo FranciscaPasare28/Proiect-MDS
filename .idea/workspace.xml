@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="28b95be5-6738-421a-a518-0eaabbe06c3c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/FrontDesk/Checkin_Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/AddCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/AddCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/ManagerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/ManagerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/Reception.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/FrontDesk/Reception.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/FrontDesk/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/RoomDirectory/SearchRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/RoomDirectory/SearchRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/SearchRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/src/main/java/HotelManagement/SearchRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/AddCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/AddCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/ManagerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/ManagerInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Reception.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Reservation$DateLabelFormatter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/Reservation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/RoomDirectory/SearchRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/RoomDirectory/SearchRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/SearchRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/SearchRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/hotel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hotel Management System/target/classes/HotelManagement/login2.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2R33Ebg1DNGX4cxN04H1aVsSW83" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28b95be5-6738-421a-a518-0eaabbe06c3c" name="Changes" comment="" />
+      <created>1686464828446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686464828446</updated>
+      <workItem from="1686464829719" duration="13000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

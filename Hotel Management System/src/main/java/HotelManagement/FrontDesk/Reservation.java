@@ -1,5 +1,6 @@
-package HotelManagement;
+package HotelManagement.FrontDesk;
 
+import HotelManagement.Conn;
 import org.jdatepicker.impl.*;
 
 import javax.swing.*;
@@ -23,7 +24,7 @@ public class Reservation extends JFrame implements ActionListener {
     JLabel checkintime;
     JButton add, back, check;
     static int attempts = 0;
-    Reservation(){
+    public Reservation(){
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -302,7 +303,7 @@ public class Reservation extends JFrame implements ActionListener {
             float pret = getReservationPrice(room, date_checkin, date_checkout);
 
             try{
-                String query = "insert into Customer values('"+identity+"','"+number+"','"+name+"','"+country+"','"+room+"','"+date_checkin+"','"+date_checkout+"','"+ pret +"','false','false')";
+                String query = "insert into Customer values('"+identity+"','"+number+"','"+name+"','"+country+"','"+room+"','"+date_checkin+"','"+date_checkout+"','"+ pret +"','false')";
 //                String query2 = "update room set availability = 'Occupied' where roomnumber = '"+room+"'";
 
                 Conn conn = new Conn();
