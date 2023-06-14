@@ -1,7 +1,5 @@
 package HotelManagement;
 
-import HotelManagement.FrontDesk.Reception;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -16,6 +14,7 @@ public class AddCustomer extends JFrame implements ActionListener {
     Choice croom;
     JLabel checkintime;
     JButton add, back;
+
     AddCustomer(){
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);

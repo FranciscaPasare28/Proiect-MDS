@@ -225,11 +225,11 @@ public class Reservation extends JFrame implements ActionListener {
             croom = new Choice();
             String room_type = null;
             if(rsingle.isSelected()){
-                room_type = "Single";
+                room_type = "Single Bed";
             }else if(rdouble.isSelected()){
-                room_type = "Double";
+                room_type = "Double Bed";
             } else if (rtriple.isSelected()) {
-                room_type = "Triple";
+                room_type = "Triple Bed";
             }
             String date_checkin = datecheckin.getModel().getValue().toString();
             String date_checkout = datecheckout.getModel().getValue().toString();
@@ -244,14 +244,15 @@ public class Reservation extends JFrame implements ActionListener {
                 Conn conn = new Conn();
                 // camere care au fost inchiriate, dar sunt libere in perioada introdusa
                 String query = "select roomnumber, price from room join customer on room.roomnumber = customer.room" +
-                        " where room_type = '"+ room_type +"'" +   // tipul camerei
+                        " where bed_type = '"+ room_type +"'" +   // tipul camerei
                         " and (checkouttime <= '"+ checkin +"'" +   // daca este disponibila la intervalul dorit
                         "     or checkintime >= '"+ checkout +"')" +
                         " and cleaning_status = 'Cleaned'" +      // daca este curata
                         " union " +
                         " select roomnumber, price from room where ROOMNUMBER not in (select room from customer) " + // camerele care nu au fost niciodata inchiriate
-                        " and room_type = '"+ room_type +"'" +
-                        " and cleaning_status = 'Cleaned'";
+                        " and bed_type = '"+ room_type +"'" +
+                        " and cleaning_status = 'Cleaned'" +
+                        " and availability = 'Available'";
                 ResultSet rs = conn.s.executeQuery(query);
                 while (rs.next()){
                     String val = "Nr. "+ rs.getString("roomnumber")+ " -- " + rs.getString("price") + " lei/noapte";
@@ -308,6 +309,8 @@ public class Reservation extends JFrame implements ActionListener {
 
                 Conn conn = new Conn();
                 conn.s.executeUpdate(query);
+                query = "update room set availability = 'Occupied' where roomnumber = " + room;
+                conn.s.executeQuery(query);
 
                 JOptionPane.showMessageDialog(null, "New customer added successfully!");
 

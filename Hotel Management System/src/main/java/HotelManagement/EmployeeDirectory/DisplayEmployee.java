@@ -35,7 +35,7 @@ public class DisplayEmployee extends JFrame {
                 Object[] rowData = new Object[]{
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("age"),
+                        rs.getString("birth_date"),
                         rs.getString("gender"),
                         rs.getString("job"),
                         rs.getString("salary"),

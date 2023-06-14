@@ -1,7 +1,5 @@
 package HotelManagement;
 
-import HotelManagement.FrontDesk.Reception;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -16,7 +14,7 @@ public class SearchRoom extends JFrame implements ActionListener {
     JComboBox bedType;
     JCheckBox available;
 
-    SearchRoom(){
+    public SearchRoom(){
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
@@ -150,7 +148,7 @@ public class SearchRoom extends JFrame implements ActionListener {
         }
         else {
             setVisible(false);
-            new Reception();
+            new HotelManagement.FrontDesk.Reception();
         }
 
     }

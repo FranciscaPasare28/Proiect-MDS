@@ -1,7 +1,5 @@
 package HotelManagement.FrontDesk;
 
-import HotelManagement.RoomDirectory.SearchRoom;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -190,10 +188,12 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
                                 String label = check.getLabel();
                                 String id = (label.strip().split(" "))[0];
                                        // adaugam clientul in table old_customer si il scoatem din customer
-                                ps = con.prepareStatement("INSERT INTO OLD_CUSTOMER SELECT * FROM CUSTOMER WHERE \"number\" = " + id);
+                                ps = con.prepareStatement("INSERT INTO OLD_CUSTOMER SELECT * FROM CUSTOMER WHERE \"number\" = " + "'" + id + "'");
                                 ps.executeUpdate();
-                                ps = con.prepareStatement("DELETE FROM CUSTOMER WHERE \"number\" = " + id);
+                                ps = con.prepareStatement("DELETE FROM CUSTOMER WHERE \"number\" = '" + id + "'");
                                 ps.executeUpdate();
+                                ps = con.prepareStatement("UPDATE ROOM SET AVAILABILITY = 'Available' WHERE roomnumber = (SELECT ROOM from customer where \"number\" =  " + "'" + id + "'" + ")" );
+                                ps.executeUpdate();     // modificam camera ca fiind valabila
                             }
                         }
                     }
