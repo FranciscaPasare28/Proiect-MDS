@@ -68,6 +68,6 @@ public class Room extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new HotelManagement.RoomDirectory.Room();
+        new Room();
     }
 }

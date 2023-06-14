@@ -12,6 +12,7 @@ public class UpdateCheck extends JFrame implements ActionListener {
     JTextField tfroom, tfname, tfcheckin, tfpaid, tfpending;
     JButton check, update, back;
     UpdateCheck(){
+
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 

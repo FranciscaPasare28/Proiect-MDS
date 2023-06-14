@@ -1,12 +1,8 @@
 package HotelManagement;
 
 
-import HotelManagement.CustomerDirectory.DisplayCustomer;
-import HotelManagement.CustomerDirectory.UpdateCustomer;
 import HotelManagement.EmployeeDirectory.Employee;
-import HotelManagement.FrontDesk.Reservation;
 import HotelManagement.RoomDirectory.Room;
-import HotelManagement.FrontDesk.*;
 
 import javax.swing.*;
 
@@ -87,7 +83,7 @@ public class Admin extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == newCustomer){
             setVisible(false);
-            new Reservation();
+            new AddCustomer();
 
         }else if(ae.getSource() == department){
             setVisible(false);
@@ -99,11 +95,11 @@ public class Admin extends JFrame implements ActionListener{
 
         } else if (ae.getSource() == customers) {
             setVisible(false);
-            new DisplayCustomer();
+            new CustomerInfo();
 
         } else if (ae.getSource() == update) {
             setVisible(false);
-            new UpdateCustomer();
+            new UpdateCheck();
 
         } else if(ae.getSource() == butEmployee){
             setVisible(false);
@@ -116,8 +112,12 @@ public class Admin extends JFrame implements ActionListener{
         }
     }
 
+
+
     public static void main(String[] args) {
         new Admin();
     }
+
+
 
 }

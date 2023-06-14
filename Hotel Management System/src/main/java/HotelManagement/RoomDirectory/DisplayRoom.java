@@ -26,7 +26,7 @@ public class DisplayRoom extends JFrame implements ActionListener {
         add(image);
 
         // Creează un model de tabel și setează coloanele
-        String[] columnNames = {"Room Number", "Cleaning Status", "Price", "Bed Type"};
+        String[] columnNames = {"Room Number", "Availability", "Cleaning Status", "Price", "Bed Type"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
 
@@ -53,11 +53,11 @@ public class DisplayRoom extends JFrame implements ActionListener {
             // Parcurge rezultatele interogării și adaugă rânduri în tabel
             while (rs.next()) {
                 String roomNumber = rs.getString("roomnumber");
-//                String availability = rs.getString("availability");
+                String availability = rs.getString("availability");
                 String cleaningStatus = rs.getString("cleaning_status");
                 String price = rs.getString("price");
                 String bedType = rs.getString("bed_type");
-                model.addRow(new Object[]{roomNumber, cleaningStatus, price, bedType});
+                model.addRow(new Object[]{roomNumber, availability, cleaningStatus, price, bedType});
             }
 
             // Închide resursele și conexiunea la baza de date
