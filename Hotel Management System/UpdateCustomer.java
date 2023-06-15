@@ -2,7 +2,6 @@ package HotelManagement.CustomerDirectory;
 
 import HotelManagement.Admin;
 import HotelManagement.Conn;
-import HotelManagement.FrontDesk.Reception;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,14 +26,12 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
-        // titlul paginii
         JLabel text = new JLabel("Update Customer");
         text.setFont(new Font("Tahoma", Font.PLAIN, 20));
         text.setBounds(90, 20, 200, 30);
         text.setForeground(Color.BLUE);
         add(text);
 
-        // id unic customer
         JLabel lblid = new JLabel("Customer id");
         lblid.setBounds(30, 80, 100, 20);
         add(lblid);
@@ -43,7 +40,6 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         ccustomer.setBounds(200,80,150,25);
         add(ccustomer);
 
-        // adaug in choice id-urile persoanelor cazate
         try{
             Conn c = new Conn();
             // afisez crescator id-urile persoanelor cazate
@@ -97,8 +93,16 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         arrived.setBackground(Color.WHITE);
         add(arrived);
 
+        JLabel lbcheckedout = new JLabel("Checked Out");
+        lbcheckedout.setBounds(30, 320, 100, 20);
+        add(lbcheckedout);
 
-        // butoane
+        checkedout = new JComboBox(new String[] {"false", "true"});
+        checkedout.setBounds(200, 320, 150, 25);
+        checkedout.setBackground(Color.WHITE);
+        add(checkedout);
+
+
         check = new JButton("Check");
         check.setBackground(Color.BLACK);
         check.setForeground(Color.WHITE);
@@ -131,7 +135,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ac)
     {
-        if (ac.getSource() == check) // afisez datele persoanei selectate
+        if (ac.getSource() == check)
         {
             String id = ccustomer.getSelectedItem();
             String query = "select * from customer where \"number\" = '" + id + "'";
@@ -150,7 +154,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
                 e.printStackTrace();
             }
 
-        }else if (ac.getSource() == update)  // updatez datele persoanei selectate
+        }else if (ac.getSource() == update)
         {
             String id_customer = ccustomer.getSelectedItem();
             String room = tfroom.getText();
@@ -158,6 +162,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
             String checkin = tfcheckin.getText();
             String checkout = tfcheckout.getText();
             String arrived = (String) this.arrived.getSelectedItem();
+            String checkedout = (String) this.checkedout.getSelectedItem();
 
 
             try{
@@ -178,13 +183,13 @@ public class UpdateCustomer extends JFrame implements ActionListener {
                 plata = camera_pret * nr_nopti;
 
                 c.s.executeUpdate("update customer set room = '" + room + "', name = '" + name + "', checkintime = '" + checkin +
-                                    "', checkouttime = '" + checkout + "', arrived = '" + arrived +
+                                    "', checkouttime = '" + checkout + "', arrived = '" + arrived + "', checkout = '" + checkedout +
                                     "', payment = '" + plata +
                                     "' where \"number\" = '" + id_customer + "'");
 
                 JOptionPane.showMessageDialog(null, "Data updated successfully!");
                 setVisible(false);
-                new Reception();
+                new Admin();
 
             }catch (Exception e)
             {
@@ -193,7 +198,7 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         }
         else{
             setVisible(false);
-            new Reception();
+            new Admin();
         }
     }
     public static void main(String[] args) {

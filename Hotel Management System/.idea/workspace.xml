@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -61,6 +64,76 @@
     ]
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Admin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.Admin" />
+      <module name="Hotel_Management_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HotelManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelManagementSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.HotelManagementSystem" />
+      <module name="Hotel_Management_System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HotelManagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Hotel_Management_System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Room" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.RoomDirectory.Room" />
+      <module name="Hotel Management System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HotelManagement.RoomDirectory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchRoom" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.RoomDirectory.SearchRoom" />
+      <module name="Hotel Management System" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HotelManagement.RoomDirectory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Admin" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HotelManagementSystem" />
+        <item itemvalue="Application.SearchRoom" />
+        <item itemvalue="Application.Room" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,10 +156,38 @@
       <workItem from="1686247589114" duration="473000" />
       <workItem from="1686250423770" duration="8211000" />
       <workItem from="1686302055632" duration="4326000" />
+      <workItem from="1686329378295" duration="8000" />
+      <workItem from="1686329402641" duration="357000" />
+      <workItem from="1686331850012" duration="645000" />
+      <workItem from="1686464548119" duration="139000" />
+      <workItem from="1686464697968" duration="122000" />
+      <workItem from="1686464859613" duration="20000" />
+      <workItem from="1686466307889" duration="2393000" />
+      <workItem from="1686472715483" duration="3902000" />
+      <workItem from="1686494983729" duration="5976000" />
+      <workItem from="1686500981683" duration="3473000" />
+      <workItem from="1686743407628" duration="2443000" />
+      <workItem from="1686746786307" duration="177000" />
+      <workItem from="1686749033693" duration="2710000" />
+      <workItem from="1686811239599" duration="1161000" />
+      <workItem from="1686816779924" duration="3966000" />
+      <workItem from="1686820795929" duration="646000" />
+      <workItem from="1686826531889" duration="13839000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

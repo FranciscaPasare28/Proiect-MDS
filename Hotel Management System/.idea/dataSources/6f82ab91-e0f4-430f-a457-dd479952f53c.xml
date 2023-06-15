@@ -19,13 +19,13 @@
       <ObjectId>109</ObjectId>
     </schema>
     <schema id="6" parent="1" name="C##MDSUSER">
-      <CreatedTimestamp>2023-05-15.16:45:12</CreatedTimestamp>
+      <CreatedTimestamp>2023-06-07.21:35:27</CreatedTimestamp>
       <Current>1</Current>
-      <IntrospectionL1Timestamp>2023-06-09.16:04:54</IntrospectionL1Timestamp>
-      <IntrospectionL2Timestamp>2023-06-09.16:04:54</IntrospectionL2Timestamp>
-      <IntrospectionL3Timestamp>2023-06-09.16:04:54</IntrospectionL3Timestamp>
+      <IntrospectionL1Timestamp>2023-06-15.17:28:13</IntrospectionL1Timestamp>
+      <IntrospectionL2Timestamp>2023-06-15.17:28:13</IntrospectionL2Timestamp>
+      <IntrospectionL3Timestamp>2023-06-15.17:28:13</IntrospectionL3Timestamp>
       <IntrospectionVersion>200820</IntrospectionVersion>
-      <ModifiedTimestamp>2023-06-09.01:03:58</ModifiedTimestamp>
+      <ModifiedTimestamp>2023-06-15.17:28:13</ModifiedTimestamp>
       <ObjectId>110</ObjectId>
     </schema>
     <schema id="7" parent="1" name="C##PROIECTPAO">
@@ -411,22 +411,22 @@
     <table id="88" parent="6" name="CUSTOMER">
       <CreatedTimestamp>2023-06-08.14:09:10</CreatedTimestamp>
       <DetailsLevel>3</DetailsLevel>
-      <ModifiedTimestamp>2023-06-08.22:39:35</ModifiedTimestamp>
+      <ModifiedTimestamp>2023-06-15.17:28:13</ModifiedTimestamp>
       <ObjectId>80804</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="89" parent="6" name="DEPARTMENT">
-      <CreatedTimestamp>2023-06-07.21:38:49</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
-      <ModifiedTimestamp>2023-06-07.21:38:49</ModifiedTimestamp>
-      <ObjectId>80776</ObjectId>
-      <TemporaryPreserve>1</TemporaryPreserve>
-    </table>
-    <table id="90" parent="6" name="EMPLOYEE">
+    <table id="89" parent="6" name="EMPLOYEE">
       <CreatedTimestamp>2023-06-07.22:21:06</CreatedTimestamp>
       <DetailsLevel>3</DetailsLevel>
       <ModifiedTimestamp>2023-06-07.22:21:06</ModifiedTimestamp>
       <ObjectId>80780</ObjectId>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="90" parent="6" name="OLD_CUSTOMER">
+      <CreatedTimestamp>2023-06-15.17:26:33</CreatedTimestamp>
+      <DetailsLevel>3</DetailsLevel>
+      <ModifiedTimestamp>2023-06-15.17:26:33</ModifiedTimestamp>
+      <ObjectId>80886</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="91" parent="6" name="ROOM">
@@ -526,11 +526,7 @@
       <DasType>VARCHAR2(10 byte)|0s</DasType>
       <Position>9</Position>
     </column>
-    <column id="106" parent="88" name="CHECKOUT">
-      <DasType>VARCHAR2(10 byte)|0s</DasType>
-      <Position>10</Position>
-    </column>
-    <index id="107" parent="88" name="CUSTOMER_pk">
+    <index id="106" parent="88" name="CUSTOMER_pk">
       <ColNames>number</ColNames>
       <CreatedTimestamp>2023-06-08.22:39:35</CreatedTimestamp>
       <ModifiedTimestamp>2023-06-08.22:39:35</ModifiedTimestamp>
@@ -538,84 +534,55 @@
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="108" parent="88" name="CUSTOMER_pk">
+    <key id="107" parent="88" name="CUSTOMER_pk">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2023-06-08.22:39:35</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>CUSTOMER_pk</UnderlyingIndexName>
     </key>
-    <column id="109" parent="89" name="ID">
+    <column id="108" parent="89" name="ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="110" parent="89" name="DEPARTMENT">
-      <DasType>VARCHAR2(30 byte)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="111" parent="89" name="BUDGET">
-      <DasType>VARCHAR2(30 byte)|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <index id="112" parent="89" name="SYS_C008812">
-      <ColNames>ID</ColNames>
-      <CreatedTimestamp>2023-06-07.21:38:49</CreatedTimestamp>
-      <ModifiedTimestamp>2023-06-07.21:38:49</ModifiedTimestamp>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>80777</ObjectId>
-      <Unique>1</Unique>
-      <TablespaceName>USERS</TablespaceName>
-    </index>
-    <key id="113" parent="89" name="SYS_C008812">
-      <InitiallyDeferred>1</InitiallyDeferred>
-      <ModifiedTimestamp>2023-06-07.21:38:49</ModifiedTimestamp>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>SYS_C008812</UnderlyingIndexName>
-    </key>
-    <column id="114" parent="90" name="ID">
-      <DasType>NUMBER(*)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="115" parent="90" name="NAME">
+    <column id="109" parent="89" name="NAME">
       <DasType>VARCHAR2(25 byte)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="116" parent="90" name="AGE">
+    <column id="110" parent="89" name="AGE">
       <DasType>VARCHAR2(10 byte)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="117" parent="90" name="GENDER">
+    <column id="111" parent="89" name="GENDER">
       <DasType>VARCHAR2(15 byte)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="118" parent="90" name="JOB">
+    <column id="112" parent="89" name="JOB">
       <DasType>VARCHAR2(30 byte)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="119" parent="90" name="SALARY">
+    <column id="113" parent="89" name="SALARY">
       <DasType>VARCHAR2(15 byte)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="120" parent="90" name="PHONE">
+    <column id="114" parent="89" name="PHONE">
       <DasType>VARCHAR2(15 byte)|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="121" parent="90" name="EMAIL">
+    <column id="115" parent="89" name="EMAIL">
       <DasType>VARCHAR2(40 byte)|0s</DasType>
       <Position>8</Position>
     </column>
-    <column id="122" parent="90" name="PASSWORD">
+    <column id="116" parent="89" name="PASSWORD">
       <DasType>VARCHAR2(25 byte)|0s</DasType>
       <Position>9</Position>
     </column>
-    <column id="123" parent="90" name="INSERT_DATE">
+    <column id="117" parent="89" name="INSERT_DATE">
       <DasType>TIMESTAMP(6)|0s</DasType>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <Position>10</Position>
     </column>
-    <index id="124" parent="90" name="SYS_C008814">
+    <index id="118" parent="89" name="SYS_C008814">
       <ColNames>ID</ColNames>
       <CreatedTimestamp>2023-06-07.22:21:06</CreatedTimestamp>
       <ModifiedTimestamp>2023-06-07.22:21:06</ModifiedTimestamp>
@@ -624,35 +591,88 @@
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="125" parent="90" name="SYS_C008814">
+    <key id="119" parent="89" name="SYS_C008814">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2023-06-07.22:21:06</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>SYS_C008814</UnderlyingIndexName>
     </key>
-    <column id="126" parent="91" name="ID">
+    <column id="120" parent="90" name="DOCUMENT">
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="121" parent="90" name="number">
+      <DasType>VARCHAR2(30 byte)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="122" parent="90" name="NAME">
+      <DasType>VARCHAR2(30 byte)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="123" parent="90" name="COUNTRY">
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="124" parent="90" name="ROOM">
+      <DasType>VARCHAR2(10 byte)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="125" parent="90" name="CHECKINTIME">
+      <DasType>VARCHAR2(200 byte)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="126" parent="90" name="CHECKOUTTIME">
+      <DasType>VARCHAR2(200 byte)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="127" parent="90" name="PAYMENT">
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="128" parent="90" name="ARRIVED">
+      <DasType>VARCHAR2(10 byte)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <index id="129" parent="90" name="SYS_C008816">
+      <ColNames>number</ColNames>
+      <CreatedTimestamp>2023-06-15.17:26:33</CreatedTimestamp>
+      <ModifiedTimestamp>2023-06-15.17:26:33</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>80887</ObjectId>
+      <Unique>1</Unique>
+      <TablespaceName>USERS</TablespaceName>
+    </index>
+    <key id="130" parent="90" name="SYS_C008816">
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <ModifiedTimestamp>2023-06-15.17:26:33</ModifiedTimestamp>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>SYS_C008816</UnderlyingIndexName>
+    </key>
+    <column id="131" parent="91" name="ID">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="127" parent="91" name="ROOMNUMBER">
+    <column id="132" parent="91" name="ROOMNUMBER">
       <DasType>VARCHAR2(20 byte)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="128" parent="91" name="CLEANING_STATUS">
+    <column id="133" parent="91" name="CLEANING_STATUS">
       <DasType>VARCHAR2(20 byte)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="129" parent="91" name="PRICE">
+    <column id="134" parent="91" name="PRICE">
       <DasType>VARCHAR2(20 byte)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="130" parent="91" name="ROOM_TYPE">
+    <column id="135" parent="91" name="ROOM_TYPE">
       <DasType>VARCHAR2(50 byte)|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="131" parent="91" name="SYS_C008811">
+    <index id="136" parent="91" name="SYS_C008811">
       <ColNames>ID</ColNames>
       <CreatedTimestamp>2023-06-07.21:35:27</CreatedTimestamp>
       <ModifiedTimestamp>2023-06-07.21:35:27</ModifiedTimestamp>
@@ -661,7 +681,7 @@
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="132" parent="91" name="SYS_C008811">
+    <key id="137" parent="91" name="SYS_C008811">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2023-06-07.21:35:27</ModifiedTimestamp>
       <NameSurrogate>1</NameSurrogate>

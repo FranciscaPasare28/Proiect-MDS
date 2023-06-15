@@ -133,7 +133,7 @@ public class AddEmployee extends JFrame{
         // Butonul radio pentru selecția genului FEMALE
         JRadioButton Female = new JRadioButton("FEMALE");
         Female.setBackground(Color.WHITE);
-        Female.setBounds(280, 120, 70, 27);
+        Female.setBounds(280, 120, 90, 27);
         add(Female);
 
 

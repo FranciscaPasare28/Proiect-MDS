@@ -1,10 +1,11 @@
 package HotelManagement;
 
+import HotelManagement.FrontDesk.Reception;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
 import java.sql.*;
 
 public class
@@ -12,7 +13,6 @@ Login extends JFrame implements ActionListener {
 
     JTextField username, password, newpassword;
     JButton login, cancel, changePassword, update;
-//    JLabel newpass;
 
     public Login(){
         getContentPane().setBackground(Color.WHITE);
@@ -78,7 +78,7 @@ Login extends JFrame implements ActionListener {
                 String job = "select * from employee where email = '" + user + "' and password = '" + pass + "'";
                 ResultSet rs = c.s.executeQuery(job);
 
-                if (rs.next()) {
+                if (rs.next()) {  // tip de job -> ce interfata deschidem
                     if (rs.getString("JOB").equals("Manager")) {
                         setVisible(false);
                         new Admin();

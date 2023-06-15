@@ -57,7 +57,7 @@ public class Room extends JFrame implements ActionListener {
             new AddRooms();
         }else if(ae.getSource() == displayRoom){
             setVisible(false);
-            new DisplayRoom();
+            new SearchRoom();
         }else if(ae.getSource() == updateRoom){
             setVisible(false);
             new UpdateRoom();

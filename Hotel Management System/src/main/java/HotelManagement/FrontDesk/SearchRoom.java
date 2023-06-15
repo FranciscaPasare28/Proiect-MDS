@@ -1,7 +1,8 @@
-package HotelManagement.RoomDirectory;
+package HotelManagement.FrontDesk;
+
 
 import HotelManagement.Conn;
-import HotelManagement.FrontDesk.Reception;
+
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -29,6 +30,7 @@ public class SearchRoom extends JFrame implements ActionListener {
         text.setBounds(400, 30, 200, 30);
         add(text);
 
+        // tip camera
         JLabel lblbed = new JLabel("Room Type");
         lblbed.setBounds(50, 100, 100, 20);
         add(lblbed);
@@ -38,6 +40,7 @@ public class SearchRoom extends JFrame implements ActionListener {
         bedType.setBackground(Color.WHITE);
         add(bedType);
 
+        // buton doar camere libere
         available = new JCheckBox("Only show available");
         available.setBounds(650, 100, 150, 25);
         available.setBackground(Color.WHITE);
@@ -112,14 +115,14 @@ public class SearchRoom extends JFrame implements ActionListener {
 
                 String query1 = "SELECT * FROM room WHERE ROOM_TYPE = '" + bedType.getSelectedItem() + "'";
                 String query2 = "SELECT ROOMNUMBER, CLEANING_STATUS, PRICE, ROOM_TYPE FROM room join customer on room.roomnumber = customer.room" +
-                                " WHERE ROOM_TYPE = '" + bedType.getSelectedItem() +
-                                "' AND (checkouttime <= '"+ date +"'" +   // daca este disponibila in ziua curenta
-                                "     or checkintime >= '"+ date +"')" +
-                                " and cleaning_status = 'Cleaned'" +
-                                " union " +
-                                " select ROOMNUMBER, CLEANING_STATUS, PRICE, ROOM_TYPE from room where ROOMNUMBER not in (select room from customer) " + // camerele care nu au fost niciodata inchiriate
-                                " and room_type = '"+ bedType.getSelectedItem() +"'" +
-                                " and cleaning_status = 'Cleaned'";
+                        " WHERE ROOM_TYPE = '" + bedType.getSelectedItem() +
+                        "' AND (checkouttime <= '"+ date +"'" +   // daca este disponibila in ziua curenta
+                        "     or checkintime >= '"+ date +"')" +
+                        " and cleaning_status = 'Cleaned'" +
+                        " union " +
+                        " select ROOMNUMBER, CLEANING_STATUS, PRICE, ROOM_TYPE from room where ROOMNUMBER not in (select room from customer) " + // camerele care nu au fost niciodata inchiriate
+                        " and room_type = '"+ bedType.getSelectedItem() +"'" +
+                        " and cleaning_status = 'Cleaned'";
 
                 Conn c = new Conn();
                 ResultSet rs;
@@ -163,13 +166,14 @@ public class SearchRoom extends JFrame implements ActionListener {
         }
         else {
             setVisible(false);
-            new Room();
+            new Reception();
         }
 
     }
 
     public static void main(String[] args) {
-        new SearchRoom();
+        new HotelManagement.RoomDirectory.SearchRoom();
     }
 }
+
 

@@ -4,7 +4,9 @@ package HotelManagement;
 import HotelManagement.CustomerDirectory.DisplayCustomer;
 import HotelManagement.CustomerDirectory.UpdateCustomer;
 import HotelManagement.EmployeeDirectory.Employee;
+import HotelManagement.FrontDesk.Reservation;
 import HotelManagement.RoomDirectory.Room;
+import HotelManagement.FrontDesk.*;
 
 import javax.swing.*;
 
@@ -12,10 +14,11 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class Admin extends JFrame implements ActionListener{
-    JButton newCustomer , rooms, department, managerInfo, customers, roomStatus, update;
-    JButton butEmployee, butRooms;
+    JButton newCustomer, customers, updateCustomer;
+    JButton butEmployee, butRooms, butReception, butCleaning;
+
     public Admin() {
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(Color.decode("#FFE0BA"));
         setLayout(null);
 
         // Butonul pentru gestionarea angajaților
@@ -34,39 +37,13 @@ public class Admin extends JFrame implements ActionListener{
         butRooms.addActionListener(this);
         add(butRooms);
 
-        department = new JButton("Departments");
-        department.setBounds(10, 230,200, 30);
-        department.setBackground(Color.BLACK);
-        department.setForeground(Color.WHITE);
-        department.addActionListener(this);
-        add(department);
+        butReception = new JButton("Reception");
+        butReception.setBounds(10, 110,200, 30);
+        butReception.setBackground(Color.BLACK);
+        butReception.setForeground(Color.WHITE);
+        butReception.addActionListener(this);
+        add(butReception);
 
-
-        customers = new JButton("Customer Info");
-        customers.setBounds(10, 310,200, 30);
-        customers.setBackground(Color.BLACK);
-        customers.setForeground(Color.WHITE);
-        customers.addActionListener(this);
-        add(customers);
-
-        update = new JButton("Update Status Customer");
-        update.setBounds(10, 350,200, 30);
-        update.setBackground(Color.BLACK);
-        update.setForeground(Color.WHITE);
-        update.addActionListener(this);
-        add(update);
-
-        JButton checkout = new JButton("Checkout");
-        checkout.setBounds(10, 390,200, 30);
-        checkout.setBackground(Color.BLACK);
-        checkout.setForeground(Color.WHITE);
-        add(checkout);
-
-        JButton logout = new JButton("Logout");
-        logout.setBounds(10, 430,200, 30);
-        logout.setBackground(Color.BLACK);
-        logout.setForeground(Color.WHITE);
-        add(logout);
 
         ImageIcon i1  = new ImageIcon("src/main/java/images/admin.png");
         Image i3 = i1.getImage().getScaledInstance(300, 300,Image.SCALE_DEFAULT);
@@ -83,25 +60,9 @@ public class Admin extends JFrame implements ActionListener{
 
     //In functie de apasarea fiecarui buton suntem trimisi in diferite pagini
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource() == newCustomer){
+        if(ae.getSource() == butReception){
             setVisible(false);
-            new Reservation();
-
-        }else if(ae.getSource() == department){
-            setVisible(false);
-            new Department();
-
-        }  else if (ae.getSource() == managerInfo) {
-            setVisible(false);
-            new ManagerInfo();
-
-        } else if (ae.getSource() == customers) {
-            setVisible(false);
-            new DisplayCustomer();
-
-        } else if (ae.getSource() == update) {
-            setVisible(false);
-            new UpdateCustomer();
+            new Reception();
 
         } else if(ae.getSource() == butEmployee){
             setVisible(false);
@@ -114,12 +75,8 @@ public class Admin extends JFrame implements ActionListener{
         }
     }
 
-
-
     public static void main(String[] args) {
         new Admin();
     }
-
-
 
 }

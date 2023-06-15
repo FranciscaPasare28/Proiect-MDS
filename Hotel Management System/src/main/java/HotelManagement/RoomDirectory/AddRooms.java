@@ -105,7 +105,7 @@ public class AddRooms extends JFrame implements ActionListener {
 
             try{
                 Conn con = new Conn();
-                String str = "INSERT INTO room values( "+id+",'"+roomnumber+"', '"+status+"','"+price+"', '"+type+"')";
+                String str = "INSERT INTO room values( "+id+",'"+roomnumber+ "','"+status+"','"+price+"', '"+type+"')";
 
                 con.s.executeUpdate(str);
 
