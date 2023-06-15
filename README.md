@@ -7,7 +7,7 @@ The reception can make reservations for customers, through which the room become
 &ensp;&ensp;&ensp;The cleaning part has access to an interactive menu through which they can select the rooms they have cleaned and in which they can view the clean rooms.</br>
 &ensp;&ensp;&ensp;The application offers an intuitive interface, so that the staff can successfully carry out their work without technical impediments.:smiley:</br>
 
-## [Application demo](https://youtu.be/4fbnvrg93LQ)
+## [Application demo](https://youtu.be/-pB3EUR_EMQ)
 Here you can find the offline demo of the application. (Link is in the header)
 ## Technical Requirments
 Oracle database service express 11g minimum and JDK 19 (Java machine)</br>
@@ -78,6 +78,8 @@ We have managed the projects tasks using jira and here is the backlog:  https://
 
 ### 6. UML diagrams.
 <img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/usecase.jpeg" width="900" height="450"></br>
+<img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/UMLClass.png" width="900" height="450"></br>
+
 ### 7. Source Control.
 Branches:</br>
 1. main - full project structure
