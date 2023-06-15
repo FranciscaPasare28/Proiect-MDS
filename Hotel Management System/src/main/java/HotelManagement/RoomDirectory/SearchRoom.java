@@ -1,10 +1,15 @@
-package HotelManagement;
+package HotelManagement.RoomDirectory;
+
+import HotelManagement.Conn;
+import HotelManagement.FrontDesk.Reception;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 public class SearchRoom extends JFrame implements ActionListener {
@@ -24,11 +29,11 @@ public class SearchRoom extends JFrame implements ActionListener {
         text.setBounds(400, 30, 200, 30);
         add(text);
 
-        JLabel lblbed = new JLabel("Bed Type");
+        JLabel lblbed = new JLabel("Room Type");
         lblbed.setBounds(50, 100, 100, 20);
         add(lblbed);
 
-        bedType = new JComboBox(new String[] {"Single Bed", "Double Bed"});
+        bedType = new JComboBox(new String[] {"Single", "Double", "Triple"});
         bedType.setBounds(150, 100, 150, 25);
         bedType.setBackground(Color.WHITE);
         add(bedType);
@@ -39,7 +44,7 @@ public class SearchRoom extends JFrame implements ActionListener {
         add(available);
 
 
-        String[] columnNames = {"Room Number", "Availability", "Status", "Price", "Bed Type"};
+        String[] columnNames = {"Room Number", "Status", "Price", "Room Type"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
 
@@ -65,11 +70,10 @@ public class SearchRoom extends JFrame implements ActionListener {
 
             while (rs.next()) {
                 String roomNumber = rs.getString("ROOMNUMBER");
-                String availability = rs.getString("AVAILABILITY");
                 String status = rs.getString("CLEANING_STATUS");
                 String price = rs.getString("PRICE");
-                String bedType = rs.getString("BED_TYPE");
-                model.addRow(new Object[]{roomNumber, availability, status, price, bedType});
+                String bedType = rs.getString("ROOM_TYPE");
+                model.addRow(new Object[]{roomNumber, status, price, bedType});
             }
 
             rs.close();
@@ -102,8 +106,20 @@ public class SearchRoom extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae){
         if (ae.getSource() == submit){
             try{
-                String query1 = "SELECT * FROM room WHERE BED_TYPE = '" + bedType.getSelectedItem() + "'";
-                String query2 = "SELECT * FROM room WHERE BED_TYPE = '" + bedType.getSelectedItem() + "' AND AVAILABILITY = 'Available'";
+                LocalDate dateObj = LocalDate.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                String date = dateObj.format(formatter);
+
+                String query1 = "SELECT * FROM room WHERE ROOM_TYPE = '" + bedType.getSelectedItem() + "'";
+                String query2 = "SELECT ROOMNUMBER, CLEANING_STATUS, PRICE, ROOM_TYPE FROM room join customer on room.roomnumber = customer.room" +
+                                " WHERE ROOM_TYPE = '" + bedType.getSelectedItem() +
+                                "' AND (checkouttime <= '"+ date +"'" +   // daca este disponibila in ziua curenta
+                                "     or checkintime >= '"+ date +"')" +
+                                " and cleaning_status = 'Cleaned'" +
+                                " union " +
+                                " select ROOMNUMBER, CLEANING_STATUS, PRICE, ROOM_TYPE from room where ROOMNUMBER not in (select room from customer) " + // camerele care nu au fost niciodata inchiriate
+                                " and room_type = '"+ bedType.getSelectedItem() +"'" +
+                                " and cleaning_status = 'Cleaned'";
 
                 Conn c = new Conn();
                 ResultSet rs;
@@ -115,7 +131,7 @@ public class SearchRoom extends JFrame implements ActionListener {
                     rs = c.s.executeQuery(query1);
                 }
 
-                String[] columnNames = {"Room Number", "Availability", "Status", "Price", "Bed Type"};
+                String[] columnNames = {"Room Number", "Status", "Price", "Room Type"};
                 DefaultTableModel model = new DefaultTableModel();
                 model.setColumnIdentifiers(columnNames);
 
@@ -133,11 +149,10 @@ public class SearchRoom extends JFrame implements ActionListener {
 
                 while (rs.next()) {
                     String roomNumber = rs.getString("ROOMNUMBER");
-                    String availability = rs.getString("AVAILABILITY");
                     String status = rs.getString("CLEANING_STATUS");
                     String price = rs.getString("PRICE");
-                    String bedType = rs.getString("BED_TYPE");
-                    model.addRow(new Object[]{roomNumber, availability, status, price, bedType});
+                    String bedType = rs.getString("ROOM_TYPE");
+                    model.addRow(new Object[]{roomNumber, status, price, bedType});
                 }
 
 
@@ -148,7 +163,7 @@ public class SearchRoom extends JFrame implements ActionListener {
         }
         else {
             setVisible(false);
-            new HotelManagement.FrontDesk.Reception();
+            new Room();
         }
 
     }

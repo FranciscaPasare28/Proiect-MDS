@@ -34,28 +34,28 @@ public class UpdateRoom extends JFrame implements ActionListener {
         add(tfId);
 
         // Etichetă și combobox pentru tipul de pat
-        JLabel ldtype = new JLabel("Bed type");
+        JLabel ldtype = new JLabel("Room type");
         ldtype.setFont(new Font("Tahoma", Font.PLAIN, 16));
         ldtype.setBounds(60, 130, 120, 30);
         add(ldtype);
 
-        String typeOptions[] = {"Single Bed", "Double Bed"};
+        String typeOptions[] = {"Single", "Double", "Triple"};
         typecombo = new JComboBox(typeOptions);
         typecombo.setBounds(200, 130, 150, 30);
         typecombo.setBackground(Color.WHITE);
         add(typecombo);
 
         // Etichetă și combobox pentru disponibilitate
-        JLabel lblAvailable = new JLabel("Available");
-        lblAvailable.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        lblAvailable.setBounds(60, 180, 120, 20);
-        add(lblAvailable);
-
-        String[] availableOptions = {"Available", "Occupied"};
-        availablecombo = new JComboBox<>(availableOptions);
-        availablecombo.setBounds(200, 180, 150, 30);
-        availablecombo.setBackground(Color.WHITE);
-        add(availablecombo);
+//        JLabel lblAvailable = new JLabel("Available");
+//        lblAvailable.setFont(new Font("Tahoma", Font.PLAIN, 18));
+//        lblAvailable.setBounds(60, 180, 120, 20);
+//        add(lblAvailable);
+//
+//        String[] availableOptions = {"Available", "Occupied"};
+//        availablecombo = new JComboBox<>(availableOptions);
+//        availablecombo.setBounds(200, 180, 150, 30);
+//        availablecombo.setBackground(Color.WHITE);
+//        add(availablecombo);
 
         // Etichetă și combobox pentru statusul de curățenie
         JLabel lblClean = new JLabel("Cleaning Status");
@@ -115,14 +115,13 @@ public class UpdateRoom extends JFrame implements ActionListener {
             String roomnumber = tfroom.getText();
             String roomId = tfId.getText();
             String bedType = (String) typecombo.getSelectedItem();
-            String availability = (String) availablecombo.getSelectedItem();
             String cleaningStatus = (String) cleancombo.getSelectedItem();
             String price = tfPrice.getText();
 
             try {
                 // Actualizarea în baza de date
                 Conn con = new Conn();
-                String query = "UPDATE room SET roomnumber ='" +roomnumber+ "' ,  bed_type = '" + bedType + "', availability = '" + availability + "', cleaning_status = '" + cleaningStatus + "', price = '" + price + "' WHERE id = " + roomId;
+                String query = "UPDATE room SET roomnumber ='" +roomnumber+ "' ,  room_type = '" + bedType + "', cleaning_status = '" + cleaningStatus + "', price = '" + price + "' WHERE id = " + roomId;
                 con.s.executeUpdate(query);
 
                 JOptionPane.showMessageDialog(null, "Room Updated Successfully");

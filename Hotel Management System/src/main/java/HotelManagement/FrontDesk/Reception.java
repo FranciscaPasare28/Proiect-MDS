@@ -1,7 +1,7 @@
 package HotelManagement.FrontDesk;
 
 
-import HotelManagement.SearchRoom;
+import HotelManagement.RoomDirectory.SearchRoom;
 
 import javax.swing.*;
 

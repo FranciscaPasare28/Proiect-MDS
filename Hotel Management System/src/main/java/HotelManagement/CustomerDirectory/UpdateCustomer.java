@@ -1,22 +1,32 @@
-package HotelManagement;
+package HotelManagement.CustomerDirectory;
+
+import HotelManagement.Admin;
+import HotelManagement.Conn;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.awt.event.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+import java.util.Locale;
 
-public class UpdateCheck extends JFrame implements ActionListener {
+public class UpdateCustomer extends JFrame implements ActionListener {
 
     Choice ccustomer;
-    JTextField tfroom, tfname, tfcheckin, tfpaid, tfpending;
+    JTextField tfroom, tfname, tfcheckin, tfpaid, tfpending, tfcheckout;
+    JComboBox arrived, checkedout;
     JButton check, update, back;
-    UpdateCheck(){
+    public UpdateCustomer(){
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
-        JLabel text = new JLabel("Update Status");
+        JLabel text = new JLabel("Update Customer");
         text.setFont(new Font("Tahoma", Font.PLAIN, 20));
         text.setBounds(90, 20, 200, 30);
         text.setForeground(Color.BLUE);
@@ -32,7 +42,8 @@ public class UpdateCheck extends JFrame implements ActionListener {
 
         try{
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from customer");
+            // afisez crescator id-urile persoanelor cazate
+            ResultSet rs = c.s.executeQuery("select \"number\" from CUSTOMER group by \"number\" order by \"number\" asc");
             while(rs.next())
             {
                 ccustomer.add(rs.getString("number"));
@@ -65,40 +76,42 @@ public class UpdateCheck extends JFrame implements ActionListener {
         tfcheckin.setBounds(200, 200, 150, 25);
         add(tfcheckin);
 
-        JLabel lbpaid = new JLabel("Amount paid");
-        lbpaid.setBounds(30, 240, 100, 20);
-        add(lbpaid);
+        JLabel lbcheckout = new JLabel("Checkout Time");
+        lbcheckout.setBounds(30, 240, 100, 20);
+        add(lbcheckout);
 
-        tfpaid = new JTextField();
-        tfpaid.setBounds(200, 240, 150, 25);
-        add(tfpaid);
+        tfcheckout = new JTextField();
+        tfcheckout.setBounds(200, 240, 150, 25);
+        add(tfcheckout);
 
-        JLabel lbpending = new JLabel("Pending Amount");
-        lbpending.setBounds(30, 280, 100, 20);
-        add(lbpending);
+        JLabel lbarrived = new JLabel("Arrived");
+        lbarrived.setBounds(30, 280, 100, 20);
+        add(lbarrived);
 
-        tfpending = new JTextField();
-        tfpending.setBounds(200, 280, 150, 25);
-        add(tfpending);
+        arrived = new JComboBox(new String[] {"false", "true"});
+        arrived.setBounds(200, 280, 150, 25);
+        arrived.setBackground(Color.WHITE);
+        add(arrived);
+
 
         check = new JButton("Check");
         check.setBackground(Color.BLACK);
         check.setForeground(Color.WHITE);
-        check.setBounds(30, 340, 100, 30);
+        check.setBounds(30, 390, 100, 30);
         check.addActionListener(this);
         add(check);
 
         update = new JButton("Update");
         update.setBackground(Color.BLACK);
         update.setForeground(Color.WHITE);
-        update.setBounds(150, 340, 100, 30);
+        update.setBounds(150, 390, 100, 30);
         update.addActionListener(this);
         add(update);
 
         back = new JButton("Back");
         back.setBackground(Color.BLACK);
         back.setForeground(Color.WHITE);
-        back.setBounds(270, 340, 100, 30);
+        back.setBounds(270, 390, 100, 30);
         back.addActionListener(this);
         add(back);
 
@@ -124,31 +137,46 @@ public class UpdateCheck extends JFrame implements ActionListener {
                     tfroom.setText(rs.getString("room"));
                     tfname.setText(rs.getString("name"));
                     tfcheckin.setText(rs.getString("checkintime"));
-                    tfpaid.setText(rs.getString("deposit"));
+                    tfcheckout.setText(rs.getString("checkouttime"));
                 }
-                ResultSet rs2 = c.s.executeQuery("select * from room where roomnumber = '" + tfroom.getText() +"'");
-                while(rs2.next())
-                {
-                    String price = rs2.getString("price");
-                    int amountPaid = Integer.parseInt(price) - Integer.parseInt(tfpaid.getText());
-                    tfpending.setText("" + amountPaid);
-                }
+
             }catch (Exception e)
             {
                 e.printStackTrace();
             }
+
         }else if (ac.getSource() == update)
         {
-            String number = ccustomer.getSelectedItem();
+            String id_customer = ccustomer.getSelectedItem();
             String room = tfroom.getText();
             String name = tfname.getText();
             String checkin = tfcheckin.getText();
-            String deposit = tfpaid.getText();
+            String checkout = tfcheckout.getText();
+            String arrived = (String) this.arrived.getSelectedItem();
+
 
             try{
                 Conn c = new Conn();
-                c.s.executeUpdate("update customer set room = '" + room + "', name = '" + name + "', checkintime = '" + checkin + "', deposit = '" + deposit + "' where \"number\" = '" + number + "'");
-//                System.out.println(("update customer set room = '" + room + "', name = '" + name + "', checkinTime = '" + checkin + "', deposit = '" + deposit + "'"));
+
+                float plata = 0;  // pret camera * nr nopti
+                float camera_pret = 0;
+                String pret_camera = "select price from room where roomnumber = '"+room+"'";
+                ResultSet rs = c.s.executeQuery(pret_camera);
+                while (rs.next()) {
+                    camera_pret = Float.parseFloat(rs.getString("price"));
+                }
+                long nr_nopti = 0;
+                LocalDate in = LocalDate.parse(checkin);
+                LocalDate out = LocalDate.parse(checkout);
+                long daysDifference = ChronoUnit.DAYS.between(in, out);
+                nr_nopti = Math.abs(daysDifference);
+                plata = camera_pret * nr_nopti;
+
+                c.s.executeUpdate("update customer set room = '" + room + "', name = '" + name + "', checkintime = '" + checkin +
+                                    "', checkouttime = '" + checkout + "', arrived = '" + arrived +
+                                    "', payment = '" + plata +
+                                    "' where \"number\" = '" + id_customer + "'");
+
                 JOptionPane.showMessageDialog(null, "Data updated successfully!");
                 setVisible(false);
                 new Admin();
@@ -164,6 +192,6 @@ public class UpdateCheck extends JFrame implements ActionListener {
         }
     }
     public static void main(String[] args) {
-        new UpdateCheck();
+        new UpdateCustomer();
     }
 }

@@ -53,12 +53,12 @@ public class AddRooms extends JFrame implements ActionListener {
         add(tfprice);
 
         // Eticheta și lista derulantă pentru tipul de pat
-        JLabel ldtype = new JLabel("Bed type");
+        JLabel ldtype = new JLabel("Room type");
         ldtype.setFont(new Font("Tahoma", Font.PLAIN, 16));
         ldtype.setBounds(60, 180, 120, 30);
         add(ldtype);
 
-        String typeOptions[] = {"Single Bed", "Double Bed", "Triple Bed"};
+        String typeOptions[] = {"Single", "Double", "Triple"};
         typecombo = new JComboBox(typeOptions);
         typecombo.setBounds(200, 180, 150, 30);
         typecombo.setBackground(Color.WHITE);
@@ -96,7 +96,7 @@ public class AddRooms extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == add){
             String roomnumber = tfroom.getText();
-            String availability = "Available";
+//            String availability = "Available";
             String status = "Cleaned";
             String price = tfprice.getText();
             String type = (String) typecombo.getSelectedItem();
@@ -105,7 +105,7 @@ public class AddRooms extends JFrame implements ActionListener {
 
             try{
                 Conn con = new Conn();
-                String str = "INSERT INTO room values( "+id+",'"+roomnumber+"', '"+availability+"', '"+status+"','"+price+"', '"+type+"')";
+                String str = "INSERT INTO room values( "+id+",'"+roomnumber+ "','"+status+"','"+price+"', '"+type+"')";
 
                 con.s.executeUpdate(str);
 
