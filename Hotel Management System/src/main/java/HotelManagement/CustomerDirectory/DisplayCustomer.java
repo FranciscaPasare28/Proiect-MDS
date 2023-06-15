@@ -1,4 +1,7 @@
-package HotelManagement;
+package HotelManagement.CustomerDirectory;
+
+import HotelManagement.Admin;
+import HotelManagement.Conn;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -7,18 +10,18 @@ import java.awt.event.*;
 import java.sql.*;
 
 
-public class ManagerInfo extends JFrame implements ActionListener {
+public class DisplayCustomer extends JFrame implements ActionListener {
 
     JTable table;
     JButton back;
 
-    ManagerInfo(){
+    public DisplayCustomer(){
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
 
-        String[] columnNames = {"Name", "Age", "Gender", "Job", "Phone","Email"};
+        String[] columnNames = {"Document Type", "Number", "Name", "Country", "Room Number","Checkin time","Checkout time","Payment","Arrived"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
 
@@ -36,17 +39,20 @@ public class ManagerInfo extends JFrame implements ActionListener {
 
         try {
             Conn c = new Conn();
-            String sql = "SELECT * FROM employee where job = 'Manager'";
+            String sql = "SELECT * FROM customer";
             ResultSet rs = c.s.executeQuery(sql);
 
             while (rs.next()) {
+                String documentType = rs.getString("DOCUMENT");
+                String number = rs.getString("number");
                 String name = rs.getString("NAME");
-                String age = rs.getString("AGE");
-                String gender = rs.getString("GENDER");
-                String job = rs.getString("JOB");
-                String phone = rs.getString("PHONE");
-                String email = rs.getString("EMAIL");
-                model.addRow(new Object[]{name, age, gender, job, phone, email});
+                String country = rs.getString("COUNTRY");
+                String room_number = rs.getString("ROOM");
+                String checkIn = rs.getString("CHECKINTIME");
+                String checkOut = rs.getString("CHECKOUTTIME");
+                String payment = rs.getString("PAYMENT");
+                String arrived = rs.getString("ARRIVED");
+                model.addRow(new Object[]{documentType, number, name, country, room_number, checkIn, checkOut, payment, arrived});
             }
 
             rs.close();
@@ -71,10 +77,9 @@ public class ManagerInfo extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae){
         setVisible(false);
-        new Reception();
+        new Admin();
     }
 
     public static void main(String[] args) {
-        new ManagerInfo();
-    }
+        new DisplayCustomer();}
 }

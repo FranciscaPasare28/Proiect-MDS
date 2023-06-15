@@ -79,7 +79,7 @@ public class UpdateEmployee extends JFrame {
                 try {
                     Conn connection = new Conn();
                     Connection conn = connection.c;
-                    String query = "UPDATE employee SET name=?, BIRTH_DATE=?, salary=?, phone=?, email=? WHERE id=?";
+                    String query = "UPDATE employee SET name=?, birth_date=?, salary=?, phone=?, email=? WHERE id=?";
                     PreparedStatement stmt = conn.prepareStatement(query);
                     stmt.setString(1, name);
                     stmt.setString(2, age);

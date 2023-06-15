@@ -18,7 +18,7 @@ public class CustomerInfo extends JFrame implements ActionListener {
         setLayout(null);
 
 
-        String[] columnNames = {"Document Type", "Number", "Name", "Gender", "Country", "Room Number","Checkin time","Deposit"};
+        String[] columnNames = {"Document Type", "Number", "Name", "Gender", "Country", "Room Number","Checkin time"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
 
@@ -47,8 +47,7 @@ public class CustomerInfo extends JFrame implements ActionListener {
                 String country = rs.getString("COUNTRY");
                 String room_number = rs.getString("ROOM");
                 String checkIn = rs.getString("CHECKINTIME");
-                String deposit = rs.getString("DEPOSIT");
-                model.addRow(new Object[]{documentType, number, name, gender, country, room_number, checkIn, deposit});
+                model.addRow(new Object[]{documentType, number, name, gender, country, room_number, checkIn});
             }
 
             rs.close();
