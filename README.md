@@ -63,20 +63,21 @@ We have managed the projects tasks using jira and here is the backlog:  https://
 &ensp;&ensp;&ensp;Overall, the hotel management system offers an intuitive interface, allowing staff members to carry out their work efficiently. It optimizes operations, enhances communication, and contributes to a seamless hotel management experience.</br>
 
 ### 5. Application interface.
-1. Add Room
-img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/AddRoom.PNG" alt="Image" width="900" height="450"></br>
-2. Admin
+1. Add Room</br>
+<img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/AddRoom.PNG" alt="Image" width="900" height="450"></br>
+2. Admin</br>
 <img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/Admin.PNG" alt="Image" width="900" height="450"></br>
-3. Cleaning Service
-<img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/CleaningService.PNG" alt="Image" width="900" height="450"></br>
-4. Login
+3. Cleaning Service</br>
+<img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/CleaningService.PNG" alt="Image" width="400" height="150"></br>
+4. Login</br>
 <img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/Login.PNG" alt="Image" width="900" height="450"></br>
-5. Reception
+5. Reception</br>
 <img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/Reception.PNG" alt="Image" width="900" height="450"></br>
-6. Add Employee
+6. Add Employee</br>
 <img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/addEmployee.PNG" alt="Image" width="900" height="450"></br>
 
 ### 6. UML diagrams.
+<img src="https://github.com/ccazacu13/Proiect-MDS/blob/main/Images/usecase.jpeg" width="900" height="450"></br>
 ### 7. Source Control.
 Branches:</br>
 1. main - full project structure
