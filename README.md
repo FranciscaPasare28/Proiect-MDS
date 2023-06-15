@@ -64,4 +64,223 @@ We have managed the projects tasks using jira and here is the backlog:  https://
 
 ### 5. Application interface.
 ### 6. UML diagrams.
-### 7. 
+### 7. Source Control.
+Branches:</br>
+1. main - full project structure
+2. Admin-Services---Room-/-CRUD  -earlier project version, manager functionality
+3. Restructurare/FrontDesk-Services  - second biggest update, front desk functionality
+4. Cleaning-Services-Interface  - latest version update, cleaning personal functionality
+</br>
+Pull requests:</br>
+<a href="https://github.com/ccazacu13/Proiect-MDS/pull/6">login + new customer #6</a> - pull request for adding the login system and customer addition to the database, Merged on June 9
+<a href="https://github.com/ccazacu13/Proiect-MDS/pull/9">Checkin/Checkout + Cleaning call #9 </a> - pull request for front desk functionality: checkin/checkout system and the posibility to request cleaning of the room.
+</br>
+
+### 8. Issue fixing.
+Three of the problems we encoutered during the development process:
+- Freed rooms are not updated in the database.
+- Rooms were reserved by the clients even when none were available.
+- Radio buttons in the reservation for where not interacting with each other.</br>
+We resolved this issues in <a href="https://github.com/ccazacu13/Proiect-MDS/pull/13">"Version with the majority of features" #13</a> pull request on 15 June.
+
+### 9. Refactoring, code standards.
+&ensp;&ensp;&ensp;We respected the code standards presented by java, the division of classes into packages based on functionalities, the rules for naming classes and creating them in a way that corresponds to the purpose they serve. Another main change is the change of the login interface to provide the possibility to change the password and facilitate access to the interface intended for each specific type of employee.
+- <a href="https://github.com/ccazacu13/Proiect-MDS/commit/ffdc92016b599f292290e4a7aee69e16535ed132#diff-ac3188dbdbd4c7c43448c6fc3125a807630e4bdb8058e5c0e77c03454f421ee6">Changing login interface.</a>
+- <a href="https://github.com/ccazacu13/Proiect-MDS/commit/a153aa741909b109917caac667277619475aafcc">Reception restructure.</a> (we have reconsidered the facilities that the reception should have).
+- <a href="https://github.com/ccazacu13/Proiect-MDS/commit/03c546803b510c9a93649a45f563fe1ea1177065">Room attributes update and customer management.</a>
+
+### 10. Code comments.
+&ensp;&ensp;&ensp;To make the code more accesible for future changes we commented the most important functions and explained what they are supposed to do and the bits that are not very intuitive.</br>
+Here is an example:</br>
+```java
+ // Metodă pentru generarea unei parole aleatoare
+    private String generateRandomPassword() {
+        // Implementați logica de generare a parolei aleatorii
+        // Aici puteți folosi orice metodă preferată pentru generarea parolei
+        // În exemplu, vom folosi o parolă formată dintr-un șir de caractere aleatorii de lungime fixă
+        int length = 8;
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder password = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            int randomIndex = (int) (Math.random() * characters.length());
+            password.append(characters.charAt(randomIndex));
+        }
+        return password.toString();
+    }
+```
+### 11. Design Patterns.
+&ensp;&ensp;&ensp;In the application for the main class that start the whole process "HotelManagementSystem.java" we opted for the idea of using a singleton design pattern. This class doens't necessitate multiple instances and the instance provided can serve it's functionality in the entire app.</br>
+&ensp;&ensp;&ensp;The Singleton design pattern is a creational design pattern that restricts the instantiation of a class to a single object. It ensures that only one instance of the class exists throughout the application and provides a global point of access to that instance.</br>
+
+```java
+    
+    public class HotelManagementSystem extends JFrame implements ActionListener {
+
+    // Instanța singleton
+    private static HotelManagementSystem instance;
+
+    // Constructor privat pentru a preveni instantierea directa
+    private HotelManagementSystem() {}
+
+    public static HotelManagementSystem getInstance() {
+        if (instance == null) {
+            // Creează o nouă instanță dacă nu există nicio instanță
+            instance = new HotelManagementSystem();
+        }
+        return instance;
+    }
+
+    public void build(){
+        // Configurarea JFrame
+        setBounds(150, 50, 1100, 700);
+        setLayout(null);
+
+        // Adăugarea imaginii hotelului
+        ImageIcon image_hotel = new ImageIcon("src/main/java/images/hotel.jpg");
+        JLabel image = new JLabel(image_hotel);
+        image.setBounds(0, 0, 1100, 700);
+        add(image);
+        
+        ....
+        
+```
+
+### 12. The usage of an AI tool.
+&ensp;&ensp;&ensp;AI tools have proven to be highly beneficial for software development in numerous ways. Here are some reasons why AI tools are considered valuable in the software development process. We have used ChatGPT made by OpenAI for debugging purposes, here is a snipped of code that resolved in errors and the implementation that the AI recommanded and resolved the bug.</br>
+
+```java
+// bugged code that was fixed by ChatGPT afterwards.
+
+
+        table = new JTable();
+                table.setBounds(0, 40, 500, 400);
+
+                try {
+                Conn c = new Conn();
+                ResultSet rs = c.s.executeQuery("select * from room");
+                // afisare a rezultatelor interogarii in tabel
+////             table.setModel(DbUtils.resultSetToTableModel(rs));
+
+                String[] columnNames = {"Room number", "Availability", "Status", "Price", "Bed Type"};
+                DefaultTableModel model = new DefaultTableModel();
+                model.setColumnIdentifiers(columnNames);
+
+                table = new JTable();
+                table.setModel(model);
+                table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+                table.setFillsViewportHeight(true);
+                JScrollPane scroll = new JScrollPane(table);
+                scroll.setHorizontalScrollBarPolicy(
+                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                scroll.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+                if (rs.next()) {
+                String RoomNumber = rs.getString("ROOMNUMBER");
+                String Availability = rs.getString("AVAILABILITY");
+                String Status = rs.getString("CLEANING_STATUS");
+                String Price = rs.getString("PRICE");
+                String BedType = rs.getString("BED_TYPE");
+                model.addRow(new Object[]{RoomNumber, Availability, Status, Price, BedType});
+                }
+                }
+                catch (Exception e) {
+                e.printStackTrace();
+                }
+
+                add(table);
+```
+
+```java
+    // Fixed version generated by the AI.
+    public class Room extends JFrame implements ActionListener {
+
+    JTable table;
+    JButton back;
+
+    Room(){
+
+        getContentPane().setBackground(Color.WHITE);
+        setLayout(null);
+
+
+        ImageIcon i1 = new ImageIcon("src/main/java/images/double_room2.jpg");
+        Image i2 = i1.getImage().getScaledInstance(600, 600, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel image = new JLabel(i3);
+        image.setBounds(500, 0, 600, 600);
+        add(image);
+
+
+        String[] columnNames = {"Room Number", "Availability", "Status", "Price", "Bed Type"};
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(columnNames);
+
+        table = new JTable();
+        table.setModel(model);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        table.setFillsViewportHeight(true);
+        JScrollPane scroll = new JScrollPane(table);
+        scroll.setHorizontalScrollBarPolicy(
+                JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scroll.setVerticalScrollBarPolicy(
+                JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scroll.setBounds(10, 40, 480, 400);
+        add(scroll);
+
+        try {
+            // Establishing a connection to the database
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelmanagement", "root", "password");
+//            Statement stmt = con.createStatement();
+
+            // modificare cod generat de chat gpt
+            Conn c = new Conn();
+
+            // Query to retrieve all rows from the room table
+            String sql = "SELECT * FROM room";
+
+            // Executing the query and storing the result in a ResultSet object
+            ResultSet rs = c.s.executeQuery(sql);  // stmt.executeQuery(sql);
+
+            // Iterating through the ResultSet and adding each row to the table model
+            while (rs.next()) {
+                String roomNumber = rs.getString("ROOMNUMBER");
+                String availability = rs.getString("AVAILABILITY");
+                String status = rs.getString("CLEANING_STATUS");
+                String price = rs.getString("PRICE");
+                String bedType = rs.getString("BED_TYPE");
+                model.addRow(new Object[]{roomNumber, availability, status, price, bedType});
+            }
+
+            // Closing the connection and statement objects
+            rs.close();
+            c.s.close();  // stmt.close();
+                          // con.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        back = new JButton("Back");
+        back.setBackground(Color.BLACK);
+        back.setForeground(Color.WHITE);
+        back.addActionListener(this);
+        back.setBounds(200, 500, 120, 30);
+        add(back);
+
+
+        setBounds(300,200,1050, 600);
+        setVisible(true);
+
+    }
+
+    public void actionPerformed(ActionEvent ae){
+        setVisible(false);
+        new Reception();
+    }
+
+    public static void main(String[] args) {
+        new Room();
+    }
+}
+```
