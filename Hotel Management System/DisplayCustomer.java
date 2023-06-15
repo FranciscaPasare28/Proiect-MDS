@@ -1,4 +1,7 @@
-package HotelManagement;
+package HotelManagement.CustomerDirectory;
+
+import HotelManagement.Admin;
+import HotelManagement.Conn;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -7,18 +10,18 @@ import java.awt.event.*;
 import java.sql.*;
 
 
-public class CustomerInfo extends JFrame implements ActionListener {
+public class DisplayCustomer extends JFrame implements ActionListener {
 
     JTable table;
     JButton back;
 
-    CustomerInfo(){
+    public DisplayCustomer(){
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
 
-        String[] columnNames = {"Document Type", "Number", "Name", "Gender", "Country", "Room Number","Checkin time"};
+        String[] columnNames = {"Document Type", "Number", "Name", "Country", "Room Number","Checkin time","Checkout time","Payment","Arrived"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
 
@@ -43,11 +46,13 @@ public class CustomerInfo extends JFrame implements ActionListener {
                 String documentType = rs.getString("DOCUMENT");
                 String number = rs.getString("number");
                 String name = rs.getString("NAME");
-                String gender = rs.getString("GENDER");
                 String country = rs.getString("COUNTRY");
                 String room_number = rs.getString("ROOM");
                 String checkIn = rs.getString("CHECKINTIME");
-                model.addRow(new Object[]{documentType, number, name, gender, country, room_number, checkIn});
+                String checkOut = rs.getString("CHECKOUTTIME");
+                String payment = rs.getString("PAYMENT");
+                String arrived = rs.getString("ARRIVED");
+                model.addRow(new Object[]{documentType, number, name, country, room_number, checkIn, checkOut, payment, arrived});
             }
 
             rs.close();
@@ -76,5 +81,5 @@ public class CustomerInfo extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new CustomerInfo();}
+        new DisplayCustomer();}
 }

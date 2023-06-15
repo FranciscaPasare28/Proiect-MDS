@@ -1,14 +1,13 @@
 package HotelManagement;
 
 import java.sql.*;
-public class Conn {
+public class Conn {  // Connection to database
 
     public Connection c;
     public Statement s;
     public Conn(){
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-//            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             c = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "c##mdsuser", "password");
             s = c.createStatement();
 

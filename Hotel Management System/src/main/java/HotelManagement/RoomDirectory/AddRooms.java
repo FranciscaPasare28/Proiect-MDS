@@ -23,7 +23,7 @@ public class AddRooms extends JFrame implements ActionListener {
     }
 
     public AddRooms() {
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
         // Eticheta pentru titlul paginii

@@ -30,36 +30,13 @@ public class Dashboard extends JFrame implements ActionListener {
         image.add(mb);
 
         JButton next = new JButton("Login");
-        next.setBounds(850, 550, 150, 50);
-        next.setBackground(Color.WHITE);
+        next.setBounds(650, 350, 150, 50);
+        next.setBackground(Color.decode("#f5d29a"));
         next.setForeground(Color.BLACK);
         next.addActionListener(this);
         next.setFont(new Font("serif", Font.PLAIN, 24));
         image.add(next);
 
-//        JMenu hotel = new JMenu("CUSTOMER");
-//        hotel.setForeground(Color.RED);
-//        mb.add(hotel);
-//
-//        JMenuItem reception = new JMenuItem("RECEPTION");
-//        reception.addActionListener(this);
-//        hotel.add(reception);
-//
-//        JMenu admin = new JMenu("EMPLOYEE");
-//        admin.setForeground(Color.BLUE);
-//        mb.add(admin);
-//
-//        JMenuItem addEmployee = new JMenuItem("ADMIN");
-//        addEmployee.addActionListener(this);
-//        admin.add(addEmployee);
-//
-//        JMenuItem addRooms = new JMenuItem("ADD ROOMS");
-//        addRooms.addActionListener(this);
-//        admin.add(addRooms);
-//
-//        JMenuItem addDriver = new JMenuItem("ADD DRIVERS");
-//        addDriver.addActionListener(this);
-//        admin.add(addDriver);
 
         setVisible(true);
     }
@@ -67,20 +44,6 @@ public class Dashboard extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae){
 
         new Login();
-
-        //daca aceasta e actiunea cream o noua instanta a clasei
-//        if(ae.getActionCommand().equals("ADD EMPLOYEE")){
-//            new AddEmployee();
-//        } else if (ae.getActionCommand().equals("ADD ROOMS")) {
-//            new AddRooms();
-//        }else if(ae.getActionCommand().equals("ADD DRIVERS")){
-//            new AddDriver();
-//        if (ae.getActionCommand().equals("ADMIN")) {
-//            new Login();
-//
-//        } else if (ae.getActionCommand().equals("RECEPTION")) {
-//            new Reception();
-//        }
     }
 
     public static void main(String[] args) {

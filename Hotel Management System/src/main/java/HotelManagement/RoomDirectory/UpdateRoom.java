@@ -14,7 +14,7 @@ public class UpdateRoom extends JFrame implements ActionListener {
 
 
     public UpdateRoom() {
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
         // Titlu
@@ -45,17 +45,6 @@ public class UpdateRoom extends JFrame implements ActionListener {
         typecombo.setBackground(Color.WHITE);
         add(typecombo);
 
-        // Etichetă și combobox pentru disponibilitate
-//        JLabel lblAvailable = new JLabel("Available");
-//        lblAvailable.setFont(new Font("Tahoma", Font.PLAIN, 18));
-//        lblAvailable.setBounds(60, 180, 120, 20);
-//        add(lblAvailable);
-//
-//        String[] availableOptions = {"Available", "Occupied"};
-//        availablecombo = new JComboBox<>(availableOptions);
-//        availablecombo.setBounds(200, 180, 150, 30);
-//        availablecombo.setBackground(Color.WHITE);
-//        add(availablecombo);
 
         // Etichetă și combobox pentru statusul de curățenie
         JLabel lblClean = new JLabel("Cleaning Status");
@@ -105,7 +94,7 @@ public class UpdateRoom extends JFrame implements ActionListener {
         cancelButton.addActionListener(this);
         add(cancelButton);
 
-        setBounds(330, 250, 470, 450);
+        setBounds(450, 100, 550, 550);
         setVisible(true);
     }
 

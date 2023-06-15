@@ -4,62 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c8e81b8-ecb2-4f73-a313-734c07ad9a79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f82ab91-e0f4-430f-a457-dd479952f53c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f82ab91-e0f4-430f-a457-dd479952f53c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/AddCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/AddDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/AddEmployee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/AddRooms.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/CustomerDirectory/UpdateCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/CustomerDirectory/UpdateCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/CustomerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/CustomerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/Department.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/EmployeeDirectory/DisplayEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/EmployeeDirectory/DisplayEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/EmployeeDirectory/UpdateEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/EmployeeDirectory/UpdateEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/EmployeeInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/FrontDesk/Checkin_Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/FrontDesk/Checkin_Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/FrontDesk/Reception.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/FrontDesk/Reception.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/FrontDesk/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/FrontDesk/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/HotelManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/HotelManagementSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/ManagerInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/AddRooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/AddRooms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/DisplayRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/SearchRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/SearchRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/UpdateRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HotelManagement/RoomDirectory/UpdateRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/SearchRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/UpdateCheck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HotelManagement/UpdateRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/AddCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/AddDriver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/AddEmployee$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/AddEmployee$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/AddEmployee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/AddRooms.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/CustomerDirectory/UpdateCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/CustomerDirectory/UpdateCustomer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/CustomerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/CustomerInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/Department.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/EmployeeDirectory/DisplayEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/EmployeeDirectory/DisplayEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/EmployeeDirectory/UpdateEmployee$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/EmployeeDirectory/UpdateEmployee$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/EmployeeInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Checkin_Checkout.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Checkin_Checkout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Reception.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Reception.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Reservation$DateLabelFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Reservation$DateLabelFormatter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/FrontDesk/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/HotelManagementSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/HotelManagementSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/ManagerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/RoomDirectory/DisplayRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/RoomDirectory/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HotelManagement/RoomDirectory/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/SearchRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/UpdateCheck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HotelManagement/UpdateRoom.class" beforeDir="false" />
-    </list>
+    <list default="true" id="5c8e81b8-ecb2-4f73-a313-734c07ad9a79" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,39 +38,39 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/#My_PC/FACULTATE/ANUL_2/SEMESTRUL_2/Metode de Dezv. Software/javax.activation-api-1.2.0-javadoc.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Lenovo/OneDrive - unibuc.ro/Desktop/jars/javax.mail-1.6.2.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
-  <component name="RunManager" selected="Application.SearchRoom">
-    <configuration name="AddRooms" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HotelManagement.RoomDirectory.AddRooms" />
-      <module name="Hotel Management System" />
+}]]></component>
+  <component name="RunManager" selected="Application.Login">
+    <configuration name="AddEmployee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.EmployeeDirectory.AddEmployee" />
+      <module name="Hotel_Management_System" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HotelManagement.RoomDirectory.*" />
+          <option name="PATTERN" value="HotelManagement.EmployeeDirectory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,12 +78,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Checkin_Checkout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HotelManagement.FrontDesk.Checkin_Checkout" />
-      <module name="Hotel Management System" />
+    <configuration name="Employee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.EmployeeDirectory.Employee" />
+      <module name="Hotel_Management_System" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HotelManagement.FrontDesk.*" />
+          <option name="PATTERN" value="HotelManagement.EmployeeDirectory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -146,12 +91,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Reservation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HotelManagement.FrontDesk.Reservation" />
-      <module name="Hotel Management System" />
+    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.Login" />
+      <module name="Hotel_Management_System" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HotelManagement.FrontDesk.*" />
+          <option name="PATTERN" value="HotelManagement.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -159,25 +104,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Room" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HotelManagement.RoomDirectory.Room" />
-      <module name="Hotel Management System" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="HotelManagement.RoomDirectory.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Hotel_Management_System" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="SearchRoom" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HotelManagement.RoomDirectory.SearchRoom" />
-      <module name="Hotel Management System" />
+      <option name="MAIN_CLASS_NAME" value="HotelManagement.FrontDesk.SearchRoom" />
+      <module name="Hotel_Management_System" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="HotelManagement.RoomDirectory.*" />
+          <option name="PATTERN" value="HotelManagement.FrontDesk.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -187,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Login" />
+        <item itemvalue="Application.AddEmployee" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Employee" />
         <item itemvalue="Application.SearchRoom" />
-        <item itemvalue="Application.Room" />
-        <item itemvalue="Application.AddRooms" />
-        <item itemvalue="Application.Checkin_Checkout" />
-        <item itemvalue="Application.Reservation" />
       </list>
     </recent_temporary>
   </component>
@@ -233,6 +172,11 @@
       <workItem from="1686811239599" duration="1161000" />
       <workItem from="1686816779924" duration="3966000" />
       <workItem from="1686820795929" duration="646000" />
+      <workItem from="1686826531889" duration="13839000" />
+      <workItem from="1686845941374" duration="164000" />
+      <workItem from="1686851728418" duration="6350000" />
+      <workItem from="1686859414086" duration="123000" />
+      <workItem from="1686859551459" duration="1775000" />
     </task>
     <servers />
   </component>

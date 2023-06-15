@@ -41,7 +41,7 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
         // Adăugarea butonului "Next"
         JButton next = new JButton("Next");
         next.setBounds(850, 550, 150, 50);
-        next.setBackground(Color.WHITE);
+        next.setBackground(Color.decode("#a7e8b3"));
         next.setForeground(Color.BLACK);
         next.addActionListener(this);
         next.setFont(new Font("serif", Font.PLAIN, 24));

@@ -92,7 +92,7 @@ public class AddEmployee extends JFrame{
     }
     public AddEmployee(){
         getContentPane().setForeground(Color.BLUE);
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setTitle("ADD EMPLOYEE DETAILS");
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -126,14 +126,14 @@ public class AddEmployee extends JFrame{
 
         // Butonul radio pentru selecția genului MALE
         JRadioButton NewRadioButton = new JRadioButton("MALE");
-        NewRadioButton.setBackground(Color.WHITE);
+        NewRadioButton.setBackground(Color.decode("#fae5c3"));
         NewRadioButton.setBounds(200, 120, 70, 27);
         add(NewRadioButton);
 
         // Butonul radio pentru selecția genului FEMALE
         JRadioButton Female = new JRadioButton("FEMALE");
-        Female.setBackground(Color.WHITE);
-        Female.setBounds(280, 120, 70, 27);
+        Female.setBackground(Color.decode("#fae5c3"));
+        Female.setBounds(280, 120, 85, 27);
         add(Female);
 
 
@@ -182,7 +182,7 @@ public class AddEmployee extends JFrame{
         setVisible(true);
 
         JLabel AddPassengers = new JLabel("ADD EMPLOYEE DETAILS");
-        AddPassengers.setForeground(Color.BLUE);
+        AddPassengers.setForeground(Color.black);
         AddPassengers.setFont(new Font("Tahoma", Font.PLAIN, 31));
         AddPassengers.setBounds(450, 24, 442, 35);
         add(AddPassengers);
@@ -260,7 +260,7 @@ public class AddEmployee extends JFrame{
         });
 
 //        setSize(900,600);
-        setBounds(300, 100, 900, 600);
+        setBounds(300, 100, 920, 580);
         setVisible(true);
 //        setLocation(530,200);
 

@@ -12,12 +12,12 @@ public class Employee extends JFrame implements ActionListener {
     JButton addEmployee, deleteEmployee, displayEmployee, updateEmployee, back;
 
     public Employee(){
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
         // Butonul pentru adăugarea unui angajat
         addEmployee = new JButton("Add employee");
-        addEmployee.setBounds(10, 30,200, 30);
+        addEmployee.setBounds(250, 70,200, 30);
         addEmployee.setBackground(Color.BLACK);
         addEmployee.setForeground(Color.WHITE);
         addEmployee.addActionListener(this);
@@ -25,7 +25,7 @@ public class Employee extends JFrame implements ActionListener {
 
         // Butonul pentru ștergerea unui angajat
         deleteEmployee = new JButton("Delete employee");
-        deleteEmployee.setBounds(10, 70,200, 30);
+        deleteEmployee.setBounds(250, 110,200, 30);
         deleteEmployee.setBackground(Color.BLACK);
         deleteEmployee.setForeground(Color.WHITE);
         deleteEmployee.addActionListener(this);
@@ -33,7 +33,7 @@ public class Employee extends JFrame implements ActionListener {
 
         // Butonul pentru afișarea tuturor angajaților
         displayEmployee = new JButton("All employees");
-        displayEmployee.setBounds(10, 110,200, 30);
+        displayEmployee.setBounds(250, 150,200, 30);
         displayEmployee.setBackground(Color.BLACK);
         displayEmployee.setForeground(Color.WHITE);
         displayEmployee.addActionListener(this);
@@ -41,7 +41,7 @@ public class Employee extends JFrame implements ActionListener {
 
         // Butonul pentru actualizarea unui angajat
         updateEmployee = new JButton("Update employee");
-        updateEmployee.setBounds(10, 150,200, 30);
+        updateEmployee.setBounds(250, 190,200, 30);
         updateEmployee.setBackground(Color.BLACK);
         updateEmployee.setForeground(Color.WHITE);
         updateEmployee.addActionListener(this);
@@ -49,13 +49,14 @@ public class Employee extends JFrame implements ActionListener {
 
         // Butonul pentru revenirea la pagina de administrare
         back = new JButton("Back");
-        back.setBounds(10, 430,200, 30);
+        back.setBounds(250, 300,200, 30);
         back.setBackground(Color.BLACK);
         back.setForeground(Color.WHITE);
         back.addActionListener(this);
         add(back);
 
-        setBounds(350,200,800,570);
+//        setBounds(350,200,800,570);
+        setBounds(350,200,800,450);
         setVisible(true);
     }
 

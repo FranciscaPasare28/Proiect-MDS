@@ -12,9 +12,9 @@ public class CleaningService extends JFrame implements ActionListener {
 
     JTextField roomInput;
     JButton done, back;
-    public CleaningService()
+    public CleaningService()  // daca clientul vrea curatenie in camera in timpul sejurului
     {
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
         JLabel room = new JLabel("Room to be cleaned: ");
@@ -40,7 +40,7 @@ public class CleaningService extends JFrame implements ActionListener {
         back.addActionListener(this);
         add(back);
 
-        setBounds(550, 500, 600, 150);
+        setBounds(400, 300, 600, 150);
         setVisible(true);
     }
     public void actionPerformed(ActionEvent ae) {

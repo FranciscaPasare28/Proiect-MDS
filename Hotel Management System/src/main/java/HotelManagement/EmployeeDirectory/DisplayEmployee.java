@@ -15,7 +15,6 @@ public class DisplayEmployee extends JFrame {
     public DisplayEmployee() {
         setTitle("Employee Table");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 400);
 
         // Configurarea layout-ului pentru fereastra
         setLayout(new BorderLayout());
@@ -74,6 +73,7 @@ public class DisplayEmployee extends JFrame {
         }
 
         // Afișarea ferestrei
+        setBounds(400, 200, 900, 400);
         setVisible(true);
     }
 

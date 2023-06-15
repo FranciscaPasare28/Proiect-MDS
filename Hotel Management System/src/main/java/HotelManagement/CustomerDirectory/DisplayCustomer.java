@@ -2,6 +2,7 @@ package HotelManagement.CustomerDirectory;
 
 import HotelManagement.Admin;
 import HotelManagement.Conn;
+import HotelManagement.FrontDesk.Reception;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -17,10 +18,10 @@ public class DisplayCustomer extends JFrame implements ActionListener {
 
     public DisplayCustomer(){
 
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
-
+        // cream tabelul in care vor fi afisate datele despre clienti
         String[] columnNames = {"Document Type", "Number", "Name", "Country", "Room Number","Checkin time","Checkout time","Payment","Arrived"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columnNames);
@@ -70,14 +71,14 @@ public class DisplayCustomer extends JFrame implements ActionListener {
         add(back);
 
 
-        setBounds(300,200,1000, 600);
+        setBounds(350,100,1000, 600);
         setVisible(true);
 
     }
 
     public void actionPerformed(ActionEvent ae){
         setVisible(false);
-        new Admin();
+        new Reception();
     }
 
     public static void main(String[] args) {

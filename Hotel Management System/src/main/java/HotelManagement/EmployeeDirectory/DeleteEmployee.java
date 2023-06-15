@@ -14,7 +14,7 @@ public class DeleteEmployee extends JFrame {
     public DeleteEmployee() {
         // Configurarea aspectului frame-ului
         getContentPane().setForeground(Color.BLUE);
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setTitle("Delete Employee");
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -24,16 +24,16 @@ public class DeleteEmployee extends JFrame {
         // Eticheta și câmpul pentru introducerea ID-ului Angajatului
         JLabel label = new JLabel("Enter Employee ID:");
         label.setFont(new Font("Tahoma", Font.PLAIN, 17));
-        label.setBounds(60, 30, 200, 27);
+        label.setBounds(60, 90, 200, 27);
         add(label);
 
         textField = new JTextField();
-        textField.setBounds(250, 30, 150, 27);
+        textField.setBounds(250, 90, 150, 27);
         add(textField);
 
         // Butonul pentru ștergere
         Delete = new JButton("Delete");
-        Delete.setBounds(200, 420, 150, 30);
+        Delete.setBounds(240, 220, 150, 30);
         Delete.setBackground(Color.BLACK);
         Delete.setForeground(Color.WHITE);
         add(Delete);
@@ -42,7 +42,7 @@ public class DeleteEmployee extends JFrame {
         Cancel = new JButton("Cancel");
         Cancel.setForeground(Color.WHITE);
         Cancel.setBackground(Color.black);
-        Cancel.setBounds(60, 420, 130, 30);
+        Cancel.setBounds(100, 220, 130, 30);
         add(Cancel);
 
         // Acțiunea butonului de anulare
@@ -76,7 +76,7 @@ public class DeleteEmployee extends JFrame {
             }
         });
         // Setarea dimensiunilor și vizibilității frame-ului
-        setBounds(300, 100, 900, 600);
+        setBounds(450, 200, 600, 400);
         setVisible(true);
     }
 

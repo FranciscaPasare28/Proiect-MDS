@@ -11,12 +11,12 @@ public class Room extends JFrame implements ActionListener {
     JButton addRoom, displayRoom, updateRoom, back;
 
     public Room(){
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
         // Buton pentru adăugarea unei camere
         addRoom = new JButton("Add room");
-        addRoom.setBounds(10, 30,200, 30);
+        addRoom.setBounds(250, 70,200, 30);
         addRoom.setBackground(Color.BLACK);
         addRoom.setForeground(Color.WHITE);
         addRoom.addActionListener(this);
@@ -24,7 +24,7 @@ public class Room extends JFrame implements ActionListener {
 
         // Buton pentru afișarea tuturor camerelor
         displayRoom = new JButton("All rooms");
-        displayRoom.setBounds(10, 70,200, 30);
+        displayRoom.setBounds(250, 110,200, 30);
         displayRoom.setBackground(Color.BLACK);
         displayRoom.setForeground(Color.WHITE);
         displayRoom.addActionListener(this);
@@ -32,7 +32,7 @@ public class Room extends JFrame implements ActionListener {
 
         // Buton pentru actualizarea unei camere
         updateRoom = new JButton("Update room");
-        updateRoom.setBounds(10, 110,200, 30);
+        updateRoom.setBounds(250, 150,200, 30);
         updateRoom.setBackground(Color.BLACK);
         updateRoom.setForeground(Color.WHITE);
         updateRoom.addActionListener(this);
@@ -40,13 +40,13 @@ public class Room extends JFrame implements ActionListener {
 
         // Buton pentru a reveni la fereastra de administrare
         back = new JButton("Back");
-        back.setBounds(10, 430,200, 30);
+        back.setBounds(250, 300,200, 30);
         back.setBackground(Color.BLACK);
         back.setForeground(Color.WHITE);
         back.addActionListener(this);
         add(back);
 
-        setBounds(350,200,800,570);
+        setBounds(350,200,800,450);
         setVisible(true);
     }
 

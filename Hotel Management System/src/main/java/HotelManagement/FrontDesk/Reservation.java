@@ -26,7 +26,7 @@ public class Reservation extends JFrame implements ActionListener {
     static int attempts = 0;
     public Reservation(){
 
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
         // titlu
@@ -69,22 +69,6 @@ public class Reservation extends JFrame implements ActionListener {
         tfname.setBounds(200,160,150,25);
         add(tfname);
 
-//        // Gen client
-//        JLabel lblgender = new JLabel("Gender");
-//        lblgender.setBounds(35, 200, 100, 20);
-//        lblgender.setFont(new Font("Raieway",Font.PLAIN, 20));
-//        add(lblgender);
-//
-//        rmale = new JRadioButton("Male");
-//        rmale.setBackground(Color.WHITE);
-//        rmale.setBounds(200,200,60,25);
-//        add(rmale);
-//
-//        rfemale = new JRadioButton("Female");
-//        rfemale.setBackground(Color.WHITE);
-//        rfemale.setBounds(270,200,100,25);
-//        add(rfemale);
-
 
         // Tara client
         JLabel lblcountry = new JLabel("Country");
@@ -104,17 +88,17 @@ public class Reservation extends JFrame implements ActionListener {
         add(lblroomtype);
 
         rsingle = new JRadioButton("Single");
-        rsingle.setBackground(Color.WHITE);
+        rsingle.setBackground(Color.decode("#fae5c3"));
         rsingle.setBounds(200,240,70,25);
         add(rsingle);
 
         rdouble = new JRadioButton("Double");
-        rdouble.setBackground(Color.WHITE);
+        rdouble.setBackground(Color.decode("#fae5c3"));
         rdouble.setBounds(270,240,70,25);
         add(rdouble);
 
         rtriple = new JRadioButton("Triple");
-        rtriple.setBackground(Color.WHITE);
+        rtriple.setBackground(Color.decode("#fae5c3"));
         rtriple.setBounds(340,240,70,25);
         add(rtriple);
 
@@ -186,7 +170,7 @@ public class Reservation extends JFrame implements ActionListener {
         l15.setBounds(400, 50, 300, 400);
         add(l15);
 
-        setBounds(350, 200, 800, 550);
+        setBounds(350, 100, 800, 550);
         setVisible(true);
     }
 
@@ -386,7 +370,7 @@ public class Reservation extends JFrame implements ActionListener {
         LocalDate checkout = null;
         LocalDate checkin = null;
         try {
-
+            // conversie
             Date date = inputFormat.parse(date_checkin);
             String outputDate = outputFormat.format(date);
             Date date2 = inputFormat.parse(date_checkout);

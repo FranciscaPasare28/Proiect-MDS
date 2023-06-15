@@ -13,10 +13,9 @@ Login extends JFrame implements ActionListener {
 
     JTextField username, password, newpassword;
     JButton login, cancel, changePassword, update;
-//    JLabel newpass;
 
     public Login(){
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(Color.decode("#fae5c3"));
 
         setLayout(null);
 
@@ -79,7 +78,7 @@ Login extends JFrame implements ActionListener {
                 String job = "select * from employee where email = '" + user + "' and password = '" + pass + "'";
                 ResultSet rs = c.s.executeQuery(job);
 
-                if (rs.next()) {
+                if (rs.next()) {  // tip de job -> ce interfata deschidem
                     if (rs.getString("JOB").equals("Manager")) {
                         setVisible(false);
                         new Admin();

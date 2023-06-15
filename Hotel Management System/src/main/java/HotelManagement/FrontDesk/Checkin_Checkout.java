@@ -1,5 +1,6 @@
 package HotelManagement.FrontDesk;
 
+import HotelManagement.Conn;
 import HotelManagement.RoomDirectory.SearchRoom;
 
 import javax.swing.*;
@@ -30,7 +31,7 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
 
         if(iteratie == 1)
         {
-            getContentPane().setBackground(Color.WHITE);
+            getContentPane().setBackground(Color.decode("#fae5c3"));
             setLayout(null);
 
             JLabel text = new JLabel("CHECKIN/CHECKOUT");
@@ -53,7 +54,7 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
             add(back);
 
             update_panels();
-            setBounds(350, 200, 800, 550);      //stilizarea panoului care le cuprinde pe celelalte
+            setBounds(350, 150, 800, 550);      //stilizarea panoului care le cuprinde pe celelalte
             setVisible(true);
         }
         else{
@@ -73,6 +74,7 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
         scrollable = new JScrollPane(checkin);          // panou scrollable
         scrollable.setBounds(10, 60, 375, 440);
 
+
         checkin.setBounds(10,60,375,440);       //stilizarea panourilor
         checkin.setLayout(new BoxLayout(checkin, BoxLayout.Y_AXIS));
 
@@ -89,6 +91,9 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
 
         scrollable.setViewportView(checkin);
         scrollable_checkout.setViewportView(checkout);      // putem panoul cu checkout in prim plan
+
+        checkin.setBackground(Color.decode("#FFE0BA"));
+        checkout.setBackground(Color.decode("#FFE0BA"));
 
         add(scrollable);
         add(scrollable_checkout);
@@ -158,7 +163,7 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         try {
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "c##mdsuser", "password");
+            Conn con = new Conn();
             PreparedStatement ps = null;
             ResultSet rs = null;
 
@@ -173,8 +178,8 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
                                     String label = check.getLabel();
                                     String id = (label.strip().split(" "))[0];
 
-                                    ps = con.prepareStatement("UPDATE CUSTOMER SET ARRIVED = 'true' WHERE \"number\" = '" + id + "'");
-                                    ps.executeUpdate();
+                                    con.s.executeQuery("UPDATE CUSTOMER SET ARRIVED = 'true' WHERE \"number\" = '" + id + "'");
+
                                 }
                             }
                         }
@@ -190,11 +195,11 @@ public class Checkin_Checkout extends JFrame implements ActionListener {
                                 String label = check.getLabel();
                                 String id = (label.strip().split(" "))[0];
                                        // adaugam clientul in table old_customer si il scoatem din customer
-                                ps = con.prepareStatement("INSERT INTO OLD_CUSTOMER SELECT * FROM CUSTOMER WHERE \"number\" = " + id);
-                                ps.executeUpdate();
-                                ps = con.prepareStatement("DELETE FROM CUSTOMER WHERE \"number\" = " + id);
-                                ps.executeUpdate();
-                                con.prepareStatement("UPDATE ROOM SET CLEANING_STATUS = 'Dirty' WHERE ROOMNUMBER = (select room from customer where \"number\" = " + id + ')').executeUpdate();
+                                con.s.executeQuery("INSERT INTO OLD_CUSTOMER SELECT * FROM CUSTOMER WHERE \"number\" = '" + id + "'");
+
+                                con.s.executeQuery("DELETE FROM CUSTOMER WHERE \"number\" = '" + id + "'");
+
+                                con.s.executeQuery("UPDATE ROOM SET CLEANING_STATUS = 'Dirty' WHERE ROOMNUMBER = (select room from old_customer where \"number\" = '" + id + "')");
 
                             }
                         }

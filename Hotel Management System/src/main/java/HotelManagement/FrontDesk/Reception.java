@@ -1,7 +1,8 @@
 package HotelManagement.FrontDesk;
 
 
-import HotelManagement.RoomDirectory.SearchRoom;
+import HotelManagement.FrontDesk.SearchRoom;
+import HotelManagement.CustomerDirectory.*;
 
 import javax.swing.*;
 
@@ -9,52 +10,53 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class Reception extends JFrame implements ActionListener{
-    JButton newCustomer , rooms, searchRoom, cleaningService, checkout;
+    JButton newCustomer , rooms, searchRoom, cleaning, checkInOut, updateCustomer, customerInfo;
     public Reception() {
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(Color.decode("#FFE0BA"));
         setLayout(null);
 
 
         newCustomer = new JButton("New Customer Form");
-        newCustomer.setBounds(10, 30,200, 30);
+        newCustomer.setBounds(20, 110,200, 30);
         newCustomer.setBackground(Color.BLACK);
         newCustomer.setForeground(Color.WHITE);
         newCustomer.addActionListener(this);
         add(newCustomer);
 
         searchRoom = new JButton("Search Room");
-        searchRoom.setBounds(10, 70,200, 30);
+        searchRoom.setBounds(20, 150,200, 30);
         searchRoom.setBackground(Color.BLACK);
         searchRoom.setForeground(Color.WHITE);
         searchRoom.addActionListener(this);
         add(searchRoom);
 
-//        JButton pickup = new JButton("Pickup Service");
-//        pickup.setBounds(10, 110,200, 30);
-//        pickup.setBackground(Color.BLACK);
-//        pickup.setForeground(Color.WHITE);
-//        add(pickup);
-//
-//        managerInfo = new JButton("Manager Info");
-//        managerInfo.setBounds(10, 150,200, 30);
-//        managerInfo.setBackground(Color.BLACK);
-//        managerInfo.setForeground(Color.WHITE);
-//        managerInfo.addActionListener(this);
-//        add(managerInfo);
+        cleaning = new JButton("Cleaning request");
+        cleaning.setBounds(20, 190,200, 30);
+        cleaning.setBackground(Color.BLACK);
+        cleaning.setForeground(Color.WHITE);
+        cleaning.addActionListener(this);
+        add(cleaning);
 
-        checkout = new JButton("Checkin/Checkout");
-        checkout.setBounds(10, 110,200, 30);
-        checkout.setBackground(Color.BLACK);
-        checkout.setForeground(Color.WHITE);
-        checkout.addActionListener(this);
-        add(checkout);
+        checkInOut = new JButton("CheckIn-CheckOut");
+        checkInOut.setBounds(20, 230,200, 30);
+        checkInOut.setBackground(Color.BLACK);
+        checkInOut.setForeground(Color.WHITE);
+        checkInOut.addActionListener(this);
+        add(checkInOut);
 
-        cleaningService = new JButton("Cleaning Service");
-        cleaningService.setBounds(10, 150,200, 30);
-        cleaningService.setBackground(Color.BLACK);
-        cleaningService.setForeground(Color.WHITE);
-        cleaningService.addActionListener(this);
-        add(cleaningService);
+        updateCustomer = new JButton("Update Customer");
+        updateCustomer.setBounds(20, 270,200, 30);
+        updateCustomer.setBackground(Color.BLACK);
+        updateCustomer.setForeground(Color.WHITE);
+        updateCustomer.addActionListener(this);
+        add(updateCustomer);
+
+        customerInfo = new JButton("Customer Info");
+        customerInfo.setBounds(20, 310,200, 30);
+        customerInfo.setBackground(Color.BLACK);
+        customerInfo.setForeground(Color.WHITE);
+        customerInfo.addActionListener(this);
+        add(customerInfo);
 
         ImageIcon i1  = new ImageIcon("src/main/java/images/reception.png");
         JLabel image = new JLabel (i1);
@@ -62,7 +64,7 @@ public class Reception extends JFrame implements ActionListener{
         add(image);
 
 
-        setBounds(350,200,800,570);
+        setBounds(350,100,800,570);
         setVisible(true);
 
     }
@@ -72,7 +74,7 @@ public class Reception extends JFrame implements ActionListener{
             setVisible(false);
             new Reservation();
 
-        } else if (ae.getSource() == cleaningService) {
+        } else if (ae.getSource() == cleaning) {
             setVisible(false);
             new CleaningService();
 
@@ -80,19 +82,23 @@ public class Reception extends JFrame implements ActionListener{
             setVisible(false);
             new SearchRoom();
 
-        } else if(ae.getSource() == checkout)
-        {
+        } else if(ae.getSource() == checkInOut) {
             setVisible(false);
             new Checkin_Checkout();
+
+        } else if (ae.getSource() == updateCustomer) {
+            setVisible(false);
+            new UpdateCustomer();
+
+        } else if (ae.getSource() == customerInfo) {
+            setVisible(false);
+            new DisplayCustomer();
+
         }
     }
-
-
 
     public static void main(String[] args) {
         new Reception();
     }
-
-
 
 }

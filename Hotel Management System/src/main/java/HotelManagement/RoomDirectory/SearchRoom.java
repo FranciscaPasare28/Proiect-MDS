@@ -21,7 +21,7 @@ public class SearchRoom extends JFrame implements ActionListener {
 
     public SearchRoom(){
 
-        getContentPane().setBackground(Color.WHITE);
+//        getContentPane().setBackground(Color.decode("#fae5c3"));
         setLayout(null);
 
         JLabel text = new JLabel("Search for Room");
@@ -40,7 +40,7 @@ public class SearchRoom extends JFrame implements ActionListener {
 
         available = new JCheckBox("Only show available");
         available.setBounds(650, 100, 150, 25);
-        available.setBackground(Color.WHITE);
+        available.setBackground(Color.decode("#fae5c3"));
         add(available);
 
 
@@ -98,7 +98,7 @@ public class SearchRoom extends JFrame implements ActionListener {
         add(back);
 
 
-        setBounds(300,200,1000, 600);
+        setBounds(300,1000,900, 600);
         setVisible(true);
 
     }

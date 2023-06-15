@@ -1,4 +1,5 @@
 package HotelManagement.EmployeeDirectory;
+
 import HotelManagement.Conn;
 
 import javax.swing.*;
@@ -19,31 +20,51 @@ public class UpdateEmployee extends JFrame {
 
     public UpdateEmployee() {
         setTitle("Update Employee");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setPreferredSize(new Dimension(778, 486));
-        setResizable(false); // Nu permiteți redimensionarea ferestrei
+        setResizable(false);
 
         // Panou principal
         JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(8, 2, 10, 10)); // Spațiere între componentele adiacente
+        mainPanel.setLayout(null);
+        mainPanel.setBackground(Color.decode("#FFE0BA"));
 
         // Label-uri și câmpuri pentru introducerea datelor
         JLabel idLabel = new JLabel("ID:");
+        idLabel.setBounds(60, 30, 150, 27);
         idField = new JTextField();
+        idField.setBounds(200, 30, 150, 27);
         JLabel nameLabel = new JLabel("Name:");
+        nameLabel.setBounds(60, 80, 150, 27);
         nameField = new JTextField();
+        nameField.setBounds(200, 80, 150, 27);
         JLabel ageLabel = new JLabel("Birth Date:");
+        ageLabel.setBounds(60, 130, 150, 27);
         ageField = new JTextField();
+        ageField.setBounds(200, 130, 150, 27);
         JLabel salaryLabel = new JLabel("Salary:");
+        salaryLabel.setBounds(60, 180, 150, 27);
         salaryField = new JTextField();
+        salaryField.setBounds(200, 180, 150, 27);
         JLabel phoneLabel = new JLabel("Phone:");
+        phoneLabel.setBounds(60, 230, 150, 27);
         phoneField = new JTextField();
+        phoneField.setBounds(200, 230, 150, 27);
         JLabel emailLabel = new JLabel("Email:");
+        emailLabel.setBounds(60, 280, 150, 27);
         emailField = new JTextField();
+        emailField.setBounds(200, 280, 150, 27);
 
         // Buton pentru actualizare
         JButton updateButton = new JButton("Update");
+        updateButton.setForeground(Color.WHITE);
+        updateButton.setBackground(Color.BLACK);
+        updateButton.setBounds(60, 330, 130, 30);
         JButton backButton = new JButton("Back");
+        backButton.setForeground(Color.WHITE);
+        backButton.setBackground(Color.BLACK);
+        backButton.setBounds(200, 330, 130, 30);
 
         // Adăugarea componentelor în panoul principal
         mainPanel.add(idLabel);
@@ -75,7 +96,6 @@ public class UpdateEmployee extends JFrame {
                 String phone = phoneField.getText();
                 String email = emailField.getText();
 
-                // Actualizarea în baza de date
                 try {
                     Conn connection = new Conn();
                     Connection conn = connection.c;
@@ -97,17 +117,19 @@ public class UpdateEmployee extends JFrame {
                 }
             }
         });
-        // Acțiunea de back
+
+        // Acțiunea de revenire
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose(); // Închide fereastra curentă
+                dispose();
                 Employee adminPage = new Employee();
-                adminPage.setVisible(true); // Deschide fereastra Admin
+                adminPage.setVisible(true);
             }
         });
 
         pack();
+        setBounds(400,150,700,500);
         setVisible(true);
     }
 
